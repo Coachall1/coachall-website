@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaching — Coachall</title>
+<meta name="description" content="One-to-one recovery and creative coaching with Spencer Hall, RCP. Start with a free 30-minute call.">
+<style>
+  :root{
+    --navy:#1A2B4A;
+    --navy-deep:#131F37;
+    --gold:#C9933A;
+    --gold-light:#F5E6C8;
+    --slate:#3D4B5C;
+    --mist:#EFF3F7;
+    --accent:#2E6DA4;
+    --paper:#FFFFFF;
+    --serif: Cambria, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+  }
+  body{
+    font-family:var(--serif);
+    color:var(--slate);
+    background:var(--paper);
+    line-height:1.65;
+    font-size:1.0625rem;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-size:.78rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:block;
+    margin-bottom:1.1rem;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  nav.site-nav{
+    background:var(--navy-deep);
+    padding:1rem 0;
+  }
+  nav.site-nav .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+  nav.site-nav .brand{
+    color:#fff;
+    text-decoration:none;
+    letter-spacing:.2em;
+    font-size:.9rem;
+    text-transform:uppercase;
+  }
+  nav.site-nav .links{
+    display:flex;
+    gap:1.6rem;
+  }
+  nav.site-nav .links a{
+    color:var(--gold-light);
+    text-decoration:none;
+    font-size:.92rem;
+  }
+  nav.site-nav .links a:hover{text-decoration:underline;}
+  nav.site-nav .links a.current{color:#fff;font-weight:700;}
+
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 80% -10%, rgba(201,147,58,.14), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--mist);
+    padding:5.5rem 0 5rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.018) 0 2px, transparent 2px 7px);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1;text-align:center;}
+  .brand-line{
+    font-size:1.05rem;
+    letter-spacing:.24em;
+    margin-bottom:1.6rem;
+    line-height:1.9;
+    text-align:center;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 5vw, 3.6rem);
+    line-height:1.15;
+    font-weight:700;
+    color:#fff;
+    max-width:20ch;
+    margin:0 auto 1.3rem;
+  }
+  .hero-rule{width:min(430px, 72%);height:2px;background:var(--gold);margin:0 auto 2rem;}
+  .hero p.lede{
+    max-width:56ch;
+    font-size:1.15rem;
+    color:#CBD6E4;
+    margin:0 auto 1.1rem;
+  }
+  .btn{
+    display:inline-block;
+    font-family:var(--serif);
+    font-size:1rem;
+    padding:.85rem 1.9rem;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy-deep);font-weight:700;}
+  .btn-gold:hover{background:#D8A54E;}
+  .btn-ghost{border-color:rgba(245,230,200,.5);color:var(--gold-light);margin-left:.75rem;}
+  .btn-ghost:hover{border-color:var(--gold-light);}
+  .btn-caption{
+    margin-top:1.3rem;
+    font-size:.92rem;
+    font-style:italic;
+    color:#9FB0C6;
+    max-width:48ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .benefits{background:var(--paper);padding:5rem 0 4.5rem;}
+  .benefits .wrap{text-align:center;}
+  .benefits h2{
+    font-size:clamp(1.6rem, 3vw, 2.1rem);
+    color:var(--navy);
+    margin-bottom:1rem;
+    max-width:28ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .benefits > .wrap > p{max-width:62ch;margin:0 auto 1rem;}
+  .benefits .lived-line{
+    font-style:italic;
+    color:var(--navy);
+    max-width:62ch;
+    margin:0 auto 2.6rem;
+    font-size:1.02rem;
+  }
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:1rem;
+    text-align:left;
+  }
+  @media (max-width:1010px){
+    .benefit-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:480px){
+    .benefit-grid{grid-template-columns:1fr;}
+  }
+  .benefit-box{
+    background:var(--gold-light);
+    border-left:4px solid var(--navy);
+    padding:1.1rem 1.1rem;
+  }
+  .benefit-box .tag{
+    font-size:.7rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--navy);
+    font-weight:700;
+    display:block;
+    margin-bottom:.5rem;
+  }
+  .benefit-box p{
+    font-size:.86rem;
+    font-style:italic;
+    color:var(--navy);
+    margin:0;
+    line-height:1.5;
+  }
+
+  .pricing{background:var(--mist);padding:5rem 0;}
+  .pricing .wrap{text-align:center;}
+  .pricing h2{
+    font-size:clamp(1.6rem, 3vw, 2.1rem);
+    color:var(--navy);
+    margin-bottom:.8rem;
+  }
+  .pricing > .wrap > p{max-width:60ch;margin:0 auto 3rem;color:var(--slate);}
+  .price-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1.2rem;
+    text-align:left;
+  }
+  @media (max-width:900px){
+    .price-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:560px){
+    .price-grid{grid-template-columns:1fr;}
+  }
+  .price-card{
+    background:var(--paper);
+    border-top:3px solid var(--gold);
+    padding:1.8rem 1.4rem;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .price-card.featured{
+    border-top-color:var(--navy);
+    box-shadow:0 12px 30px rgba(26,43,74,.14);
+  }
+  .price-card .tag{
+    position:absolute;
+    top:-.75rem;right:1.2rem;
+    background:var(--navy);
+    color:var(--gold-light);
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:.35rem .7rem;
+  }
+  .price-card h3{font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;}
+  .price-card .amount{
+    font-size:1.9rem;
+    font-weight:700;
+    color:var(--navy);
+    margin:.4rem 0 .2rem;
+  }
+  .price-card .per{font-size:.82rem;color:#6B7A8C;margin-bottom:1rem;}
+  .price-card p.desc{font-size:.9rem;margin-bottom:1.4rem;flex-grow:1;}
+  .price-card .btn{text-align:center;font-size:.92rem;padding:.7rem 1rem;margin-top:auto;}
+
+  .testimonials{background:var(--navy);padding:5rem 0;text-align:center;}
+  .testimonials h2{color:#fff;margin-bottom:2.6rem;font-size:clamp(1.6rem, 3vw, 2.1rem);}
+  .t-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.4rem;
+    text-align:left;
+  }
+  @media (max-width:900px){
+    .t-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:600px){
+    .t-grid{grid-template-columns:1fr;}
+  }
+  .t-card{
+    background:var(--navy-deep);
+    padding:1.4rem 1.3rem;
+    border-left:3px solid var(--gold);
+  }
+  .t-card p{color:#CBD6E4;font-size:.92rem;font-style:italic;margin-bottom:.9rem;}
+  .t-card .who-said{color:var(--gold-light);font-size:.85rem;letter-spacing:.04em;}
+
+  .final-cta{background:var(--gold-light);padding:4.5rem 0;text-align:center;}
+  .final-cta h2{color:var(--navy);margin-bottom:1rem;font-size:clamp(1.5rem,3vw,2rem);}
+  .final-cta p{max-width:52ch;margin:0 auto 1.8rem;color:var(--slate);}
+
+  footer{background:var(--navy-deep);color:#9FB0C6;padding:3rem 0 2.5rem;font-size:.92rem;}
+  footer .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+  footer a{color:var(--gold-light);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  footer .brandline{color:#fff;letter-spacing:.28em;font-size:.8rem;}
+
+  @media (max-width:760px){
+    .hero{padding:4rem 0 3.5rem;}
+    .btn-ghost{margin-left:0;margin-top:.8rem;}
+  }
+</style>
+</head>
+<body>
+
+<script>
+  const CONFIG = {
+    CALENDLY_URL: "https://calendly.com/spencer-sz4/introductory-call",
+    TERMS_URL: "https://payhip.com/CREATEbyCoachall/terms-and-conditions-of-sale",
+    REFUNDS_URL: "https://payhip.com/CREATEbyCoachall/refund-and-cancellation-policy"
+  };
+</script>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="/">Coachall</a>
+    <div class="links">
+      <a href="/">Manuals</a>
+      <a href="/coaching.html" class="current">Coaching</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow brand-line">Coachall &nbsp;\u00b7&nbsp; Spencer Hall &nbsp;\u00b7&nbsp; RCP (CCAR) &nbsp;\u00b7&nbsp; IARCP</span>
+    <span class="eyebrow">One to one</span>
+    <h1>Coaching, worked through with me directly.</h1>
+    <div class="hero-rule"></div>
+    <p class="lede">The C.R.E.A.T.E. framework, applied to your actual life \u2014 not a manual you work through alone, but sessions where we work through it together.</p>
+    <p class="lede">Start with a free call. No pressure, no pitch \u2014 just a conversation to see if it's the right fit.</p>
+    <a class="btn btn-gold" data-link="calendly" href="#">Book your free call</a>
+    <a class="btn btn-ghost" href="#pricing">See pricing</a>
+  </div>
+</header>
+
+<section class="benefits">
+  <div class="wrap">
+    <span class="eyebrow">Benefits of working with me</span>
+    <h2>Where the manuals map the path, coaching walks it with you.</h2>
+    <p>Every manual gives you the C.R.E.A.T.E. framework to work through on your own. Coaching is what happens when you want someone alongside you while you do it \u2014 applying the same framework to your actual circumstances, not just the page.</p>
+    <p class="lived-line">I've lived every step in every one of these manuals myself \u2014 not just written them.</p>
+    <div class="benefit-grid">
+      <div class="benefit-box">
+        <span class="tag">Creative Journey</span>
+        <p>Where the manual asks you to explore what draws you, coaching helps you actually follow through on it \u2014 someone holding you to the excitement you found.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Meditation</span>
+        <p>Stillness is easy to read about and hard to sustain alone. Sessions give the practice a check-in that keeps it honest.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Breathwork</span>
+        <p>A technique only proves itself under real pressure, not on the page. Coaching is where we test it against your actual stress, together.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Better Habits</span>
+        <p>The manual gives you the steps. Sessions give you someone checking in on what's genuinely changing, and adjusting the approach when it isn't.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Wellness</span>
+        <p>Rest, food, and movement look different in theory than in a real week. Coaching adapts the foundations to the life you're actually living.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Slow Life</span>
+        <p>Doing less is harder than it sounds when everyone around you is doing more. Coaching gives you permission and structure to actually slow down.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Primal Fitness</span>
+        <p>Strength built alone can stall quietly. Sessions keep the momentum honest, without gym theatre or guilt.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Sobriety &amp; Recovery</span>
+        <p>Work through the hardest modules with a Recovery Coach Professional who built this framework from twenty-five years of harmful habits, not theory.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Neurowellness &amp; Craft</span>
+        <p>Making something with your hands is transformative. Coaching helps you find the version of that which fits your life, not just mine.</p>
+      </div>
+      <div class="benefit-box">
+        <span class="tag">Grief &amp; Loss</span>
+        <p>Some chapters aren't meant to be worked through alone. Coaching gives you room to go slower, or say something out loud before you write it down.</p>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:#6B7A8C;margin-top:2.4rem;max-width:60ch;margin-left:auto;margin-right:auto;">This isn't a substitute for medical, psychiatric, or therapeutic care. If you're in crisis, please contact your GP, the Samaritans, or emergency services first.</p>
+  </div>
+</section>
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <span class="eyebrow">Sessions</span>
+    <h2>Start free. Continue at your own pace.</h2>
+    <p>Every paid tier is the same 60-minute, one-to-one session \u2014 the only difference is how many you book at once, and the saving that comes with committing further.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Discovery call</h3>
+        <div class="amount">Free</div>
+        <div class="per">30 minutes</div>
+        <p class="desc">A no-obligation conversation to see if we're the right fit, before you spend anything.</p>
+        <a class="btn btn-gold" data-link="calendly" href="#">Book free call</a>
+      </div>
+      <div class="price-card">
+        <h3>Single session</h3>
+        <div class="amount">\u00a375</div>
+        <div class="per">60 minutes</div>
+        <p class="desc">One session, no commitment beyond it. A good way to try coaching properly for the first time.</p>
+        <a class="btn btn-gold" data-link="calendly" href="#">Book a session</a>
+      </div>
+      <div class="price-card featured">
+        <span class="tag">Most chosen</span>
+        <h3>Six sessions</h3>
+        <div class="amount">\u00a3399</div>
+        <div class="per">\u00a366.50 per session</div>
+        <p class="desc">The committed start \u2014 enough sessions to build real momentum through the framework.</p>
+        <a class="btn btn-gold" data-link="calendly" href="#">Book six sessions</a>
+      </div>
+      <div class="price-card">
+        <h3>Ten sessions</h3>
+        <div class="amount">\u00a3595</div>
+        <div class="per">\u00a359.50 per session</div>
+        <p class="desc">The full journey \u2014 the deepest saving, for anyone ready to work through the whole framework with support.</p>
+        <a class="btn btn-gold" data-link="calendly" href="#">Book ten sessions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold);">What clients say</span>
+    <h2>Positive outcomes, in their words.</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <p>"He really made me feel heard and understood. He listened with intent whilst being able to navigate me through to a place where I could find solutions to help me move forward."</p>
+        <div class="who-said">Beatrice P.</div>
+      </div>
+      <div class="t-card">
+        <p>"I was really suffering with anxiety and my confidence and Spencer really helped me get over my issues, pushing me further and to be more self aware. He helped to break down some of my limiting beliefs."</p>
+        <div class="who-said">Bobby T.</div>
+      </div>
+      <div class="t-card">
+        <p>"Coachall has been an excellent professional and person who has had a positive impact on my life. His coaching style is personally tailored to you."</p>
+        <div class="who-said">Pride N.</div>
+      </div>
+      <div class="t-card">
+        <p>"Spencer has been working for us as a freelance Recovery Coach, providing one to one Recovery Coaching support to individuals in recovery. A great resource to individuals who have been affected by gambling."</p>
+        <div class="who-said">Reframe Coaching</div>
+      </div>
+      <div class="t-card">
+        <p>"I am very grateful to have had this opportunity and enjoyed working with my coach who was engaging and gave me opportunity to express my feelings."</p>
+        <div class="who-said">D.P.</div>
+      </div>
+      <div class="t-card">
+        <p>"Very calming, made you feel at ease. Great active listener."</p>
+        <div class="who-said">CCAR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Ready to talk it through?</h2>
+    <p>The free call is exactly that \u2014 free, and no pressure either way. If it's not the right fit, you'll know within thirty minutes, and there's no cost to finding that out.</p>
+    <a class="btn btn-gold" data-link="calendly" href="#">Book your free call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="brandline">C O A C H A L L</p>
+      <p>\u00a92026 Coachall \u00b7 Brighton, UK</p>
+    </div>
+    <div>
+      <p><a href="mailto:spencer@coachall.co.uk">spencer@coachall.co.uk</a></p>
+      <p><a data-link="terms" href="#">Terms &amp; Conditions of Sale</a> \u00b7 <a data-link="refunds" href="#">Refunds &amp; Cancellation</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-link="calendly"]').forEach(a => { a.href = CONFIG.CALENDLY_URL; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll('[data-link="terms"]').forEach(a => a.href = CONFIG.TERMS_URL);
+  document.querySelectorAll('[data-link="refunds"]').forEach(a => a.href = CONFIG.REFUNDS_URL);
+</script>
+</body>
+</html>
