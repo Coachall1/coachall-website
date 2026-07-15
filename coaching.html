@@ -44,6 +44,7 @@
     outline-offset:3px;
   }
 
+  /* ---------- Nav ---------- */
   nav.site-nav{
     background:var(--navy-deep);
     padding:1rem 0;
@@ -74,6 +75,7 @@
   nav.site-nav .links a:hover{text-decoration:underline;}
   nav.site-nav .links a.current{color:#fff;font-weight:700;}
 
+  /* ---------- Hero ---------- */
   .hero{
     background:
       radial-gradient(1200px 500px at 80% -10%, rgba(201,147,58,.14), transparent 60%),
@@ -137,6 +139,7 @@
     margin-right:auto;
   }
 
+  /* ---------- Who this is for ---------- */
   .benefits{background:var(--paper);padding:5rem 0 4.5rem;}
   .benefits .wrap{text-align:center;}
   .benefits h2{
@@ -189,6 +192,7 @@
     line-height:1.5;
   }
 
+  /* ---------- Pricing ---------- */
   .pricing{background:var(--mist);padding:5rem 0;}
   .pricing .wrap{text-align:center;}
   .pricing h2{
@@ -242,6 +246,7 @@
   .price-card p.desc{font-size:.9rem;margin-bottom:1.4rem;flex-grow:1;}
   .price-card .btn{text-align:center;font-size:.92rem;padding:.7rem 1rem;margin-top:auto;}
 
+  /* ---------- Testimonials ---------- */
   .testimonials{background:var(--navy);padding:5rem 0;text-align:center;}
   .testimonials h2{color:#fff;margin-bottom:2.6rem;font-size:clamp(1.6rem, 3vw, 2.1rem);}
   .t-grid{
@@ -264,10 +269,12 @@
   .t-card p{color:#CBD6E4;font-size:.92rem;font-style:italic;margin-bottom:.9rem;}
   .t-card .who-said{color:var(--gold-light);font-size:.85rem;letter-spacing:.04em;}
 
+  /* ---------- Final CTA ---------- */
   .final-cta{background:var(--gold-light);padding:4.5rem 0;text-align:center;}
   .final-cta h2{color:var(--navy);margin-bottom:1rem;font-size:clamp(1.5rem,3vw,2rem);}
   .final-cta p{max-width:52ch;margin:0 auto 1.8rem;color:var(--slate);}
 
+  /* ---------- Footer ---------- */
   footer{background:var(--navy-deep);color:#9FB0C6;padding:3rem 0 2.5rem;font-size:.92rem;}
   footer .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
   footer a{color:var(--gold-light);text-decoration:none;}
@@ -282,6 +289,9 @@
 </head>
 <body>
 
+<!-- ============================================================
+     EDIT THIS VALUE BEFORE PUBLISHING
+     ============================================================ -->
 <script>
   const CONFIG = {
     CALENDLY_URL: "https://calendly.com/spencer-sz4/introductory-call",
@@ -302,12 +312,12 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow brand-line">Coachall &nbsp;\u00b7&nbsp; Spencer Hall &nbsp;\u00b7&nbsp; RCP (CCAR) &nbsp;\u00b7&nbsp; IARCP</span>
+    <span class="eyebrow brand-line">Coachall &nbsp;·&nbsp; Spencer Hall &nbsp;·&nbsp; RCP (CCAR) &nbsp;·&nbsp; IARCP</span>
     <span class="eyebrow">One to one</span>
     <h1>Coaching, worked through with me directly.</h1>
     <div class="hero-rule"></div>
-    <p class="lede">The C.R.E.A.T.E. framework, applied to your actual life \u2014 not a manual you work through alone, but sessions where we work through it together.</p>
-    <p class="lede">Start with a free call. No pressure, no pitch \u2014 just a conversation to see if it's the right fit.</p>
+    <p class="lede">The C.R.E.A.T.E. framework, applied to your actual life — not a manual you work through alone, but sessions where we work through it together.</p>
+    <p class="lede">Start with a free call. No pressure, no pitch — just a conversation to see if it's the right fit.</p>
     <a class="btn btn-gold" data-link="calendly" href="#">Book your free call</a>
     <a class="btn btn-ghost" href="#pricing">See pricing</a>
   </div>
@@ -317,12 +327,12 @@
   <div class="wrap">
     <span class="eyebrow">Benefits of working with me</span>
     <h2>Where the manuals map the path, coaching walks it with you.</h2>
-    <p>Every manual gives you the C.R.E.A.T.E. framework to work through on your own. Coaching is what happens when you want someone alongside you while you do it \u2014 applying the same framework to your actual circumstances, not just the page.</p>
-    <p class="lived-line">I've lived every step in every one of these manuals myself \u2014 not just written them.</p>
+    <p>Every manual gives you the C.R.E.A.T.E. framework to work through on your own. Coaching is what happens when you want someone alongside you while you do it — applying the same framework to your actual circumstances, not just the page.</p>
+    <p class="lived-line">I've lived every step in every one of these manuals myself — not just written them.</p>
     <div class="benefit-grid">
       <div class="benefit-box">
         <span class="tag">Creative Journey</span>
-        <p>Where the manual asks you to explore what draws you, coaching helps you actually follow through on it \u2014 someone holding you to the excitement you found.</p>
+        <p>Where the manual asks you to explore what draws you, coaching helps you actually follow through on it — someone holding you to the excitement you found.</p>
       </div>
       <div class="benefit-box">
         <span class="tag">Meditation</span>
@@ -368,7 +378,7 @@
   <div class="wrap">
     <span class="eyebrow">Sessions</span>
     <h2>Start free. Continue at your own pace.</h2>
-    <p>Every paid tier is the same 60-minute, one-to-one session \u2014 the only difference is how many you book at once, and the saving that comes with committing further.</p>
+    <p>Every paid tier is the same 60-minute, one-to-one session — the only difference is how many you book at once, and the saving that comes with committing further.</p>
     <div class="price-grid">
       <div class="price-card">
         <h3>Discovery call</h3>
@@ -379,7 +389,7 @@
       </div>
       <div class="price-card">
         <h3>Single session</h3>
-        <div class="amount">\u00a375</div>
+        <div class="amount">£75</div>
         <div class="per">60 minutes</div>
         <p class="desc">One session, no commitment beyond it. A good way to try coaching properly for the first time.</p>
         <a class="btn btn-gold" data-link="calendly" href="#">Book a session</a>
@@ -387,16 +397,16 @@
       <div class="price-card featured">
         <span class="tag">Most chosen</span>
         <h3>Six sessions</h3>
-        <div class="amount">\u00a3399</div>
-        <div class="per">\u00a366.50 per session</div>
-        <p class="desc">The committed start \u2014 enough sessions to build real momentum through the framework.</p>
+        <div class="amount">£399</div>
+        <div class="per">£66.50 per session</div>
+        <p class="desc">The committed start — enough sessions to build real momentum through the framework.</p>
         <a class="btn btn-gold" data-link="calendly" href="#">Book six sessions</a>
       </div>
       <div class="price-card">
         <h3>Ten sessions</h3>
-        <div class="amount">\u00a3595</div>
-        <div class="per">\u00a359.50 per session</div>
-        <p class="desc">The full journey \u2014 the deepest saving, for anyone ready to work through the whole framework with support.</p>
+        <div class="amount">£595</div>
+        <div class="per">£59.50 per session</div>
+        <p class="desc">The full journey — the deepest saving, for anyone ready to work through the whole framework with support.</p>
         <a class="btn btn-gold" data-link="calendly" href="#">Book ten sessions</a>
       </div>
     </div>
@@ -439,7 +449,7 @@
 <section class="final-cta">
   <div class="wrap">
     <h2>Ready to talk it through?</h2>
-    <p>The free call is exactly that \u2014 free, and no pressure either way. If it's not the right fit, you'll know within thirty minutes, and there's no cost to finding that out.</p>
+    <p>The free call is exactly that — free, and no pressure either way. If it's not the right fit, you'll know within thirty minutes, and there's no cost to finding that out.</p>
     <a class="btn btn-gold" data-link="calendly" href="#">Book your free call</a>
   </div>
 </section>
@@ -448,11 +458,11 @@
   <div class="wrap">
     <div>
       <p class="brandline">C O A C H A L L</p>
-      <p>\u00a92026 Coachall \u00b7 Brighton, UK</p>
+      <p>©2026 Coachall · Brighton, UK</p>
     </div>
     <div>
       <p><a href="mailto:spencer@coachall.co.uk">spencer@coachall.co.uk</a></p>
-      <p><a data-link="terms" href="#">Terms &amp; Conditions of Sale</a> \u00b7 <a data-link="refunds" href="#">Refunds &amp; Cancellation</a></p>
+      <p><a data-link="terms" href="#">Terms &amp; Conditions of Sale</a> · <a data-link="refunds" href="#">Refunds &amp; Cancellation</a></p>
     </div>
   </div>
 </footer>

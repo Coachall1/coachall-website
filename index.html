@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coachall \u2014 The C.R.E.A.T.E. Series</title>
+<title>Coachall — The C.R.E.A.T.E. Series</title>
 <meta name="description" content="Ten self-study manuals built on lived experience. The C.R.E.A.T.E. framework by Spencer Hall, Recovery Coach Professional.">
 <style>
   :root{
@@ -44,6 +44,7 @@
     outline-offset:3px;
   }
 
+  /* ---------- Hero ---------- */
   .hero{
     background:
       radial-gradient(1200px 500px at 80% -10%, rgba(201,147,58,.14), transparent 60%),
@@ -53,7 +54,7 @@
     position:relative;
     overflow:hidden;
   }
-  .hero::after{
+  .hero::after{ /* faint char-grain, a nod to yakisugi */
     content:"";
     position:absolute;inset:0;
     background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.018) 0 2px, transparent 2px 7px);
@@ -119,6 +120,7 @@
     margin-right:auto;
   }
 
+  /* ---------- Framework / signature ---------- */
   .framework{background:var(--paper);padding:5.5rem 0 5rem;text-align:center;}
   .framework h2{margin-left:auto;margin-right:auto;}
   .framework p{margin-left:auto;margin-right:auto;}
@@ -173,6 +175,7 @@
   .framework p, .story p{max-width:62ch;margin-bottom:1rem;}
   .framework .note{font-style:italic;color:var(--accent);}
 
+  /* ---------- Series ---------- */
   .series{background:var(--navy);padding:5.5rem 0 5rem;text-align:center;}
   .series h2{margin-left:auto;margin-right:auto;color:#fff;}
   .series > .wrap > p{margin-left:auto;margin-right:auto;color:#CBD6E4;}
@@ -221,6 +224,7 @@
     color:#6B7A8C;
   }
 
+  /* ---------- Story ---------- */
   .story{background:var(--paper);padding:5.5rem 0;}
   .story .wrap{
     display:grid;
@@ -255,6 +259,7 @@
   .press a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
   .press a:hover{color:var(--navy);}
 
+  /* ---------- Check-in ---------- */
   .checkin{background:var(--gold-light);padding:5rem 0;}
   .checkin .wrap{max-width:760px;text-align:center;}
   .checkin h2{margin-left:auto;margin-right:auto;}
@@ -280,6 +285,7 @@
   .checkin .fineprint{font-size:.85rem;margin-top:1.2rem;color:#7A6A45;}
   .form-status{margin-top:1rem;font-weight:700;color:var(--navy);min-height:1.4em;}
 
+  /* ---------- Footer ---------- */
   footer{background:var(--navy-deep);color:#9FB0C6;padding:3rem 0 2.5rem;font-size:.92rem;}
   footer .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
   footer a{color:var(--gold-light);text-decoration:none;}
@@ -292,6 +298,7 @@
     .story .wrap{grid-template-columns:1fr;gap:2.2rem;}
   }
 
+  /* ---------- Nav ---------- */
   nav.site-nav{background:var(--navy-deep);padding:1rem 0;}
   nav.site-nav .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
   nav.site-nav .brand{color:#fff;text-decoration:none;letter-spacing:.2em;font-size:.9rem;text-transform:uppercase;}
@@ -303,12 +310,18 @@
 </head>
 <body>
 
+<!-- ============================================================
+     EDIT THESE THREE VALUES BEFORE PUBLISHING
+     ============================================================ -->
 <script>
   const CONFIG = {
     PAYHIP_URL: "https://payhip.com/CREATEbyCoachall/",
     FORM_ACTION: "https://assets.mailerlite.com/jsonp/2489057/forms/192036572284061279/subscribe",
     TERMS_URL: "https://payhip.com/CREATEbyCoachall/terms-and-conditions-of-sale",
     REFUNDS_URL: "https://payhip.com/CREATEbyCoachall/refund-and-cancellation-policy",
+    // Optional: real word sets for the C.R.E.A.T.E. letters, one array per
+    // manual. Leave empty and the letters display without rotating words.
+    // Example: WORD_SETS: [["...","...","...","...","...","..."], [...]]
     WORD_SETS: []
   };
 </script>
@@ -325,12 +338,12 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow brand-line">Coachall &nbsp;\u00b7&nbsp; Spencer Hall &nbsp;\u00b7&nbsp; RCP (CCAR) &nbsp;\u00b7&nbsp; IARCP</span>
+    <span class="eyebrow brand-line">Coachall &nbsp;·&nbsp; Spencer Hall &nbsp;·&nbsp; RCP (CCAR) &nbsp;·&nbsp; IARCP</span>
     <div class="hero-rule brand-rule"></div>
     <h1>Once Burned.<br>Now Revived.</h1>
     <div class="hero-rule"></div>
     <p class="lede">Twenty-five years lost.</p>
-    <p class="lede">Lived experience became the C.R.E.A.T.E. Series \u2014 for anyone who needs it.</p>
+    <p class="lede">Lived experience became the C.R.E.A.T.E. Series — for anyone who needs it.</p>
     <a class="btn btn-gold" data-link="payhip" href="#">Browse the series</a>
     <a class="btn btn-ghost" href="#checkin">Start Your Honest Check-In</a>
     <p class="btn-caption">The Honest Check-In is gentle questions to take stock of where you are. No scores, no judgement.</p>
@@ -342,15 +355,15 @@
     <div class="story-side">
       <span class="eyebrow">Spencer's story</span>
       <h2>Written by a fellow traveller.</h2>
-      <p class="sig">\u2014 Spencer Hall, Brighton</p>
+      <p class="sig">— Spencer Hall, Brighton</p>
       <div class="creds">
         <strong>Credentials.</strong> Recovery Coach Professional (RCP), internationally accredited through CCAR via Recovery Coach Academy UK. Member of the International Association of Recovery Coach Professionals (IARCP).
       </div>
-      <p class="press">As featured in <a href="https://www.barcelona-metropolitan.com/living/business/a-day-in-the-life-spencer-hall/" target="_blank" rel="noopener">Barcelona Metropolitan Magazine</a> \u2014 "A Day in the Life: Spencer Hall".</p>
+      <p class="press">As featured in <a href="https://www.barcelona-metropolitan.com/living/business/a-day-in-the-life-spencer-hall/" target="_blank" rel="noopener">Barcelona Metropolitan Magazine</a> — "A Day in the Life: Spencer Hall".</p>
     </div>
     <div>
-      <p>I spent more than twenty-five years inside a loop of harmful habits. My world was horse racing, and gambling was the loudest habit of them all \u2014 but it wasn't the only one. Recovery, when it came, didn't arrive through willpower alone. It arrived through making things.</p>
-      <p>In Barcelona I built a furniture workshop around yakisugi, the Japanese craft of charring wood \u2014 taking something through fire and finding it stronger and more beautiful on the other side. Alongside it I grew a Meetup community of hundreds, and in the workshop I taught the craft to others \u2014 watching creativity transform people, because it was quietly transforming me.</p>
+      <p>I spent more than twenty-five years inside a loop of harmful habits. My world was horse racing, and gambling was the loudest habit of them all — but it wasn't the only one. Recovery, when it came, didn't arrive through willpower alone. It arrived through making things.</p>
+      <p>In Barcelona I built a furniture workshop around yakisugi, the Japanese craft of charring wood — taking something through fire and finding it stronger and more beautiful on the other side. Alongside it I grew a Meetup community of hundreds, and in the workshop I taught the craft to others — watching creativity transform people, because it was quietly transforming me.</p>
       <p>Back home in Brighton I trained as a recovery coach and shaped everything I'd learned into a framework I could put in your hands. That framework became C.R.E.A.T.E., and these ten manuals are the result. I wrote them the way I taught in the workshop: beside you, not above you.</p>
     </div>
   </div>
@@ -360,12 +373,12 @@
   <div class="wrap">
     <span class="eyebrow">The C.R.E.A.T.E. Series</span>
     <h2>Ten manuals. One framework. Your pace.</h2>
-    <p style="max-width:62ch;">Every manual leaves you with something you keep \u2014 habits that hold, rest that restores, a calmer mind, closer connections, or the quiet confidence of making something with your own hands. Start with the one your life is asking for.</p>
+    <p style="max-width:62ch;">Every manual leaves you with something you keep — habits that hold, rest that restores, a calmer mind, closer connections, or the quiet confidence of making something with your own hands. Start with the one your life is asking for.</p>
 
     <div class="series-grid">
       <a class="manual" data-link="payhip" href="#">
         <span class="num">01</span><h3>Creative Journey</h3>
-        <p>Where the framework begins \u2014 rediscovering creativity as a way back to yourself.</p>
+        <p>Where the framework begins — rediscovering creativity as a way back to yourself.</p>
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">02</span><h3>Meditation</h3>
@@ -377,7 +390,7 @@
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">04</span><h3>Better Habits</h3>
-        <p>Small changes that hold \u2014 built for ease, not willpower.</p>
+        <p>Small changes that hold — built for ease, not willpower.</p>
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">05</span><h3>Wellness</h3>
@@ -389,11 +402,11 @@
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">07</span><h3>Primal Fitness</h3>
-        <p>Natural movement for real bodies \u2014 strength without the gym theatre.</p>
+        <p>Natural movement for real bodies — strength without the gym theatre.</p>
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">08</span><h3>Sobriety &amp; Recovery</h3>
-        <p>The framework applied where it was forged \u2014 living well beyond addiction.</p>
+        <p>The framework applied where it was forged — living well beyond addiction.</p>
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">09</span><h3>Neurowellness &amp; Craft</h3>
@@ -401,7 +414,7 @@
       </a>
       <a class="manual" data-link="payhip" href="#">
         <span class="num">10</span><h3>Grief &amp; Loss</h3>
-        <p>Creating through loss \u2014 gentle structure for the hardest of times.</p>
+        <p>Creating through loss — gentle structure for the hardest of times.</p>
       </a>
     </div>
 
@@ -432,7 +445,7 @@
   <div class="wrap">
     <span class="eyebrow">Free guide</span>
     <h2>The Honest Check-In</h2>
-    <p>A gentle way to take stock of where you are. No scores and no judgement \u2014 a short guide of honest questions I use with the people I coach, and with myself. Enter your email and I'll send it over, along with an occasional letter from me.</p>
+    <p>A gentle way to take stock of where you are. No scores and no judgement — a short guide of honest questions I use with the people I coach, and with myself. Enter your email and I'll send it over, along with an occasional letter from me.</p>
     <form data-form="checkin" method="post" action="">
       <label for="email" style="position:absolute;left:-9999px;">Email address</label>
       <input type="email" id="email" name="fields[email]" placeholder="Your email address" required>
@@ -448,16 +461,17 @@
   <div class="wrap">
     <div>
       <p class="brandline">C O A C H A L L</p>
-      <p>\u00a92026 Coachall \u00b7 Brighton, UK</p>
+      <p>©2026 Coachall · Brighton, UK</p>
     </div>
     <div>
       <p><a href="mailto:spencer@coachall.co.uk">spencer@coachall.co.uk</a></p>
-      <p><a data-link="terms" href="#">Terms &amp; Conditions of Sale</a> \u00b7 <a data-link="refunds" href="#">Refunds &amp; Cancellation</a></p>
+      <p><a data-link="terms" href="#">Terms &amp; Conditions of Sale</a> · <a data-link="refunds" href="#">Refunds &amp; Cancellation</a></p>
     </div>
   </div>
 </footer>
 
 <script>
+  // Fill links from CONFIG
   document.querySelectorAll('[data-link="payhip"]').forEach(a => a.href = CONFIG.PAYHIP_URL);
   document.querySelectorAll('[data-link="terms"]').forEach(a => a.href = CONFIG.TERMS_URL);
   document.querySelectorAll('[data-link="refunds"]').forEach(a => a.href = CONFIG.REFUNDS_URL);
@@ -469,22 +483,24 @@
       e.preventDefault();
       const btn = form.querySelector('button');
       btn.disabled = true;
-      statusEl.textContent = 'One moment\u2026';
+      statusEl.textContent = 'One moment…';
       fetch(CONFIG.FORM_ACTION, { method: 'POST', body: new FormData(form) })
         .then(r => r.json())
         .then(() => {
           form.style.display = 'none';
-          statusEl.textContent = 'Done \u2014 check your inbox. Your Honest Check-In is on its way.';
+          statusEl.textContent = 'Done — check your inbox. Your Honest Check-In is on its way.';
         })
         .catch(() => {
           btn.disabled = false;
-          statusEl.textContent = 'That didn\u2019t go through \u2014 please try again, or email spencer@coachall.co.uk.';
+          statusEl.textContent = 'That didn\u2019t go through — please try again, or email spencer@coachall.co.uk.';
         });
     });
   } else {
-    form.addEventListener('submit', e => { e.preventDefault(); alert('Signup form not yet connected \u2014 set FORM_ACTION in the CONFIG block.'); });
+    form.addEventListener('submit', e => { e.preventDefault(); alert('Signup form not yet connected — set FORM_ACTION in the CONFIG block.'); });
   }
 
+  // The acronym breathe: rotates between three manuals' word sets,
+  // all verified against the published PDFs.
   const FRAMEWORK_SETS = [
     { name: "Creative Journey", words: ["Choose","Refine","Empower","Achieve","Triumph","Excel"] },
     { name: "Wellness", words: ["Connect","Rest","Exercise","Awareness","Try New Things","Express Yourself"] },
