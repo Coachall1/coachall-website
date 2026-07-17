@@ -283,6 +283,12 @@
     border-top:2px solid var(--gold);
     padding:1rem .9rem;
   }
+  a.price-tile{
+    text-decoration:none;
+    display:block;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  a.price-tile:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.35);}
   .price-tile .amount{
     font-size:1.4rem;
     font-weight:700;
@@ -401,6 +407,11 @@
     // rather than pointing at a dead "#".
     COMPANION_GUIDE_URL: "https://payhip.com/b/0gI6l",
     START_HERE_URL: "https://payhip.com/b/6V8fq",
+    // The Complete Library — confirmed live product URL.
+    LIBRARY_URL: "https://payhip.com/b/vcswj",
+    // Library + Coaching Session (£194) — URL not yet confirmed this session.
+    // Falls back to the storefront link until this is filled in.
+    LIBRARY_COACHING_URL: "",
     // Individual manual product pages, in series order 01–10.
     // Only Creative Journey (index 0) and Sobriety & Recovery (index 7) have been
     // reconfirmed directly in this session. The other eight are carried over from
@@ -443,7 +454,7 @@
     <div class="hero-rule"></div>
     <p class="lede">Twenty-five years lost.</p>
     <p class="lede">Lived experience became the C.R.E.A.T.E. Series — for anyone who needs it.</p>
-    <a class="btn btn-gold" data-link="payhip" href="#">Browse the series</a>
+    <a class="btn btn-gold" href="#series">Browse the series</a>
     <a class="btn btn-ghost" href="#checkin">Start Your Honest Check-In</a>
     <p class="btn-caption">The Honest Check-In is gentle questions to take stock of where you are. No scores, no judgement.</p>
   </div>
@@ -555,14 +566,14 @@
           <div class="amount">£39</div>
           <div class="label">Three-manual bundle</div>
         </div>
-        <div class="price-tile">
+        <a class="price-tile" data-link="library" href="#">
           <div class="amount">£119</div>
           <div class="label">Complete Library — all ten manuals</div>
-        </div>
-        <div class="price-tile">
+        </a>
+        <a class="price-tile" data-link="library-coaching" href="#">
           <div class="amount">£194</div>
           <div class="label">Complete Library + a coaching session</div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -591,17 +602,17 @@
 
 <section class="checkin" id="checkin">
   <div class="wrap">
-    <span class="eyebrow">Free guide</span>
-    <h2>The Honest Check-In</h2>
-    <p>A gentle way to take stock of where you are. No scores and no judgement — a short guide of honest questions I use with the people I coach, and with myself. Enter your email and I'll send it over, along with an occasional letter from me.</p>
+    <span class="eyebrow">Want more than the PDF?</span>
+    <h2>Get Guided To The Right Manual</h2>
+    <p>You can grab the Honest Check-In free, above — no email needed. If you'd like more than that, sign up here and I'll send the guide plus a handful of short letters that help you work out which manual actually fits what you're carrying.</p>
     <form data-form="checkin" method="post" action="">
       <label for="email" style="position:absolute;left:-9999px;">Email address</label>
       <input type="email" id="email" name="fields[email]" placeholder="Your email address" required>
       <input type="hidden" name="ml-submit" value="1">
-      <button class="btn btn-navy" type="submit">Start my check-in</button>
+      <button class="btn btn-navy" type="submit">Send me the guide and letters</button>
     </form>
     <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-    <p class="fineprint">One guide, occasional letters, unsubscribe any time.</p>
+    <p class="fineprint">The guide, plus a few short letters. Unsubscribe any time.</p>
   </div>
 </section>
 
@@ -628,6 +639,8 @@
   });
   document.querySelectorAll('[data-link="terms"]').forEach(a => a.href = CONFIG.TERMS_URL);
   document.querySelectorAll('[data-link="refunds"]').forEach(a => a.href = CONFIG.REFUNDS_URL);
+  document.querySelectorAll('[data-link="library"]').forEach(a => a.href = CONFIG.LIBRARY_URL || CONFIG.PAYHIP_URL);
+  document.querySelectorAll('[data-link="library-coaching"]').forEach(a => a.href = CONFIG.LIBRARY_COACHING_URL || CONFIG.PAYHIP_URL);
   const form = document.querySelector('[data-form="checkin"]');
   const statusEl = document.getElementById('formStatus');
   if (CONFIG.FORM_ACTION) {
