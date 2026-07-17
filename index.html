@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coachall — The C.R.E.A.T.E. Series</title>
 <meta name="description" content="Ten self-study manuals built on lived experience. The C.R.E.A.T.E. framework by Spencer Hall, Recovery Coach Professional.">
+<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
 <style>
   :root{
     --navy:#1A2B4A;
@@ -176,11 +177,21 @@
   .framework .note{font-style:italic;color:var(--accent);}
 
   /* ---------- Map strip ---------- */
-  .map-strip{background:var(--mist);padding:1.5rem 0;text-align:center;border-bottom:1px solid rgba(26,43,74,.08);}
+  .map-strip{background:var(--mist);padding:2rem 0;text-align:center;border-bottom:1px solid rgba(26,43,74,.08);}
   .map-strip__text{font-size:.98rem;color:var(--slate);max-width:64ch;margin:0 auto;}
-  .map-strip__text a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
-  .map-strip__text a:hover{color:var(--navy);}
-  .map-strip__text a.is-disabled{color:#9AA7B4;text-decoration:none;pointer-events:none;cursor:default;}
+  .map-strip__buttons{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+  .btn-gold-outline{
+    background:transparent;
+    border:1.5px solid var(--navy);
+    color:var(--navy);
+    font-weight:700;
+    font-size:.92rem;
+    padding:.7rem 1.3rem;
+  }
+  .btn-gold-outline:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+  @media (max-width:600px){
+    .map-strip__buttons{flex-direction:column;align-items:center;}
+  }
 
   /* ---------- Series ---------- */
   .series{background:var(--navy);padding:5.5rem 0 5rem;text-align:center;}
@@ -459,11 +470,14 @@
 
 <section class="map-strip" id="map">
   <div class="wrap">
-    <p class="map-strip__text">
-      New here and not sure where to start? Read
-      <a data-link="companion" href="#">the Companion Guide</a> for Spencer's story and the heart of the method, or
-      <a data-link="startHere" href="#">C.R.E.A.T.E. Start Here</a> for the full map of all ten manuals — free, no email required.
+    <p class="map-strip__text" style="margin-bottom:1.2rem;">
+      New here and not sure where to start? Three free pieces, no email required:
     </p>
+    <div class="map-strip__buttons">
+      <a href="https://payhip.com/b/0gI6l" class="payhip-buy-button btn btn-gold-outline" data-theme="none" data-product="0gI6l">The Companion Guide</a>
+      <a href="https://payhip.com/b/6V8fq" class="payhip-buy-button btn btn-gold-outline" data-theme="none" data-product="6V8fq">C.R.E.A.T.E. Start Here</a>
+      <a href="https://payhip.com/b/Q0FwL" class="payhip-buy-button btn btn-gold-outline" data-theme="none" data-product="Q0FwL">The Honest Check-In</a>
+    </div>
   </div>
 </section>
 
@@ -614,22 +628,6 @@
   });
   document.querySelectorAll('[data-link="terms"]').forEach(a => a.href = CONFIG.TERMS_URL);
   document.querySelectorAll('[data-link="refunds"]').forEach(a => a.href = CONFIG.REFUNDS_URL);
-  // Companion Guide / Start Here: wire up if a URL has been set in CONFIG,
-  // otherwise disable the link visibly rather than leaving a dead "#".
-  function wireOptionalLink(key, configValue) {
-    document.querySelectorAll('[data-link="' + key + '"]').forEach(a => {
-      if (configValue) {
-        a.href = configValue;
-      } else {
-        a.classList.add('is-disabled');
-        a.setAttribute('aria-disabled', 'true');
-        a.removeAttribute('href');
-        a.title = 'Coming soon';
-      }
-    });
-  }
-  wireOptionalLink('companion', CONFIG.COMPANION_GUIDE_URL);
-  wireOptionalLink('startHere', CONFIG.START_HERE_URL);
   const form = document.querySelector('[data-form="checkin"]');
   const statusEl = document.getElementById('formStatus');
   if (CONFIG.FORM_ACTION) {
