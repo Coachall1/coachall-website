@@ -41,7 +41,7 @@ section{padding:5rem 0;}
 
 /* ---------- Header ---------- */
 header{position:sticky;top:0;z-index:50;background:rgba(19,31,55,.96);backdrop-filter:blur(6px);}
-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem;}
+header .wrap{display:flex;align-items:center;justify-content:center;padding-top:.85rem;padding-bottom:.85rem;}
 .logo{color:#fff;text-decoration:none;letter-spacing:.28em;font-size:.95rem;}
 nav{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;}
 nav a{color:var(--mist);text-decoration:none;font-size:.95rem;}
@@ -138,13 +138,12 @@ nav a.nav-cta:hover{background:#d9a855;color:var(--navy-deep);}
   .includes{grid-template-columns:1fr;}
   nav{gap:1rem;}
 }
-</style>
+@media (max-width:600px){header .wrap{flex-wrap:wrap;justify-content:center;row-gap:.35rem;}nav{justify-content:center;gap:.45rem 1.05rem;}nav a{white-space:nowrap;font-size:.88rem;}}</style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a class="logo" href="index.html">COACHALL</a>
     <nav>
       <a href="index.html#series">Manuals</a>
       <a href="coaching.html">Coaching</a>
