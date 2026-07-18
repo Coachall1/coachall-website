@@ -3,694 +3,475 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coachall — The C.R.E.A.T.E. Series</title>
-<meta name="description" content="Ten self-study manuals built on lived experience. The C.R.E.A.T.E. framework by Spencer Hall, Recovery Coach Professional.">
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+<title>Coachall — Ten Recovery Manuals & Coaching by Spencer Hall</title>
+<meta name="description" content="Ten practical self-study manuals for rebuilding life after addiction — plus one-to-one coaching. Written by Spencer Hall, Recovery Coach Professional (CCAR), who spent 25 years as a professional gambler and made his way back.">
+<link rel="canonical" href="https://coachall.co.uk/">
+
+<!-- FIX: Open Graph + Twitter cards — shared links now render with image, title and description -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coachall">
+<meta property="og:title" content="Coachall — Once Burned. Now Revived.">
+<meta property="og:description" content="Ten practical manuals for rebuilding life after addiction, written by someone who lived it. Start with the free Honest Check-In.">
+<meta property="og:url" content="https://coachall.co.uk/">
+<meta property="og:image" content="https://coachall.co.uk/og-cover.jpg"><!-- 1200x630 image to be created -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coachall — Once Burned. Now Revived.">
+<meta name="twitter:description" content="Ten practical manuals for rebuilding life after addiction, written by someone who lived it.">
+<meta name="twitter:image" content="https://coachall.co.uk/og-cover.jpg">
+
+<!-- FIX: favicon (currently 404 on live site) — inline SVG monogram, no extra request -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A2B4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' fill='%23C9933A' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+
+<!-- FIX: analytics — Plausible (privacy-friendly, fits brand). Uncomment with real domain.
+<script defer data-domain="coachall.co.uk" src="https://plausible.io/js/script.js"></script> -->
+
+<!-- FIX: structured data so Google understands the products -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Coachall",
+  "url": "https://coachall.co.uk/",
+  "founder": { "@type": "Person", "name": "Spencer Hall", "jobTitle": "Recovery Coach Professional" },
+  "email": "spencer@coachall.co.uk",
+  "address": { "@type": "PostalAddress", "addressLocality": "Brighton", "addressCountry": "GB" }
+}
+</script>
+
 <style>
-  :root{
-    --navy:#1A2B4A;
-    --navy-deep:#131F37;
-    --gold:#C9933A;
-    --gold-light:#F5E6C8;
-    --slate:#3D4B5C;
-    --mist:#EFF3F7;
-    --accent:#2E6DA4;
-    --paper:#FFFFFF;
-    --serif: Cambria, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *,*::before,*::after{animation:none!important;transition:none!important;}
-  }
-  body{
-    font-family:var(--serif);
-    color:var(--slate);
-    background:var(--paper);
-    line-height:1.65;
-    font-size:1.0625rem;
-  }
-  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    font-size:.78rem;
-    letter-spacing:.32em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:block;
-    margin-bottom:1.1rem;
-  }
-  a:focus-visible, button:focus-visible, input:focus-visible{
-    outline:3px solid var(--accent);
-    outline-offset:3px;
-  }
+:root{
+  --navy:#1A2B4A; --navy-deep:#131F37; --gold:#C9933A; --gold-light:#F5E6C8;
+  --slate:#3D4B5C; --mist:#EFF3F7; --accent:#2E6DA4; --paper:#FFFFFF;
+  --serif: Cambria, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--serif);color:var(--slate);background:var(--paper);line-height:1.65;font-size:1.0625rem;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+.eyebrow{font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.1rem;}
+h1,h2,h3{color:var(--navy);line-height:1.2;font-weight:700;}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin-bottom:1rem;}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation:none!important;transition:none!important;}}
 
-  /* ---------- Hero ---------- */
-  .hero{
-    background:
-      radial-gradient(1200px 500px at 80% -10%, rgba(201,147,58,.14), transparent 60%),
-      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color:var(--mist);
-    padding:6.5rem 0 6rem;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::after{ /* faint char-grain, a nod to yakisugi */
-    content:"";
-    position:absolute;inset:0;
-    background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.018) 0 2px, transparent 2px 7px);
-    pointer-events:none;
-  }
-  .brand-line{
-    font-size:1.05rem;
-    letter-spacing:.24em;
-    margin-bottom:1.6rem;
-    line-height:1.9;
-    text-align:center;
-  }
-  .hero .wrap{position:relative;z-index:1;text-align:center;}
-  .hero h1{
-    font-size:clamp(2.4rem, 5.4vw, 4.2rem);
-    line-height:1.12;
-    font-weight:700;
-    color:#fff;
-    max-width:19ch;
-    margin:0 auto 1.4rem;
-  }
-  .sub-head{
-    display:block;
-    font-size:.52em;
-    font-weight:400;
-    font-style:italic;
-    color:var(--gold-light);
-    margin-top:.55em;
-    letter-spacing:.01em;
-  }
-  .hero p.lede{
-    max-width:52ch;
-    font-size:1.15rem;
-    color:#CBD6E4;
-    margin:0 auto 1.1rem;
-  }
-  .hero p.lede + p.lede{margin-bottom:2.4rem;}
-  .btn{
-    display:inline-block;
-    font-family:var(--serif);
-    font-size:1rem;
-    padding:.85rem 1.9rem;
-    border-radius:2px;
-    text-decoration:none;
-    border:1px solid transparent;
-    cursor:pointer;
-    transition:background .18s ease, color .18s ease, border-color .18s ease;
-  }
-  .btn-gold{background:var(--gold);color:var(--navy-deep);font-weight:700;}
-  .btn-gold:hover{background:#D8A54E;}
-  .btn-ghost{border-color:rgba(245,230,200,.5);color:var(--gold-light);margin-left:.75rem;}
-  .btn-ghost:hover{border-color:var(--gold-light);}
-  .hero-rule{width:min(430px, 72%);height:2px;background:var(--gold);margin:0 auto 2.2rem;}
-  .brand-rule{margin:0 auto 2.4rem;}
-  .brand-line{margin-bottom:1rem;}
-  .btn-caption{
-    margin-top:1.3rem;
-    font-size:.92rem;
-    font-style:italic;
-    color:#9FB0C6;
-    max-width:48ch;
-    margin-left:auto;
-    margin-right:auto;
-  }
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(19,31,55,.96);backdrop-filter:blur(6px);}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem;}
+.logo{color:#fff;text-decoration:none;letter-spacing:.28em;font-size:.95rem;}
+nav{display:flex;gap:1.6rem;align-items:center;}
+nav a{color:var(--mist);text-decoration:none;font-size:.95rem;}
+nav a:hover{color:var(--gold);}
+nav a.nav-cta{background:var(--gold);color:var(--navy-deep);padding:.45rem 1rem;border-radius:4px;font-weight:700;}
+nav a.nav-cta:hover{background:#d9a855;color:var(--navy-deep);}
 
-  /* ---------- Framework / signature ---------- */
-  .framework{background:var(--paper);padding:5.5rem 0 5rem;text-align:center;}
-  .framework h2{margin-left:auto;margin-right:auto;}
-  .framework p{margin-left:auto;margin-right:auto;}
-  .acronym{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    margin:3rem 0 1rem;
-    transition:opacity .6s ease;
-  }
-  .acronym.dim{opacity:0;}
-  .set-label{
-    font-size:.82rem;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--gold);
-    margin-bottom:1.4rem;
-    transition:opacity .6s ease;
-  }
-  .set-label.dim{opacity:0;}
-  .acro-block{display:flex;flex:0 0 auto;}
-  .acro-letter{
-    background:var(--navy);
-    color:#fff;
-    font-weight:700;
-    font-size:1.45rem;
-    width:44px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .acro-word{
-    background:var(--slate);
-    color:var(--gold);
-    font-weight:700;
-    font-size:.8rem;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    padding:.75rem .65rem;
-    display:flex;
-    align-items:center;
-    white-space:nowrap;
-  }
-  .framework h2, .series h2, .story h2, .checkin h2{
-    font-size:clamp(1.7rem, 3.2vw, 2.3rem);
-    color:var(--navy);
-    line-height:1.2;
-    margin-bottom:1.2rem;
-    max-width:24ch;
-  }
-  .framework p, .story p{max-width:62ch;margin-bottom:1rem;}
-  .framework .note{font-style:italic;color:var(--accent);}
+/* ---------- Hero ---------- */
+.hero{background:radial-gradient(1200px 500px at 80% -10%, rgba(201,147,58,.14), transparent 60%),linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--mist);padding:6rem 0 5rem;text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.018) 0 2px, transparent 2px 7px);pointer-events:none;}
+.hero .inner{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 24px;}
+.hero .rule{width:120px;height:2px;background:var(--gold);margin:1.4rem auto;}
+.hero h1{color:#fff;font-size:clamp(2.4rem,6vw,4rem);}
+/* FIX: plain-language subline — what it is, who it's for, what outcome */
+.hero .sub{font-size:1.18rem;color:#C7D2E3;max-width:56ch;margin:1.4rem auto 0;}
+.hero .sub strong{color:#F5E6C8;font-weight:700;}
+.hero .ctas{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.95rem 2rem;border-radius:4px;font-size:1.02rem;border:2px solid transparent;cursor:pointer;font-family:inherit;}
+.btn-gold{background:var(--gold);color:var(--navy-deep);}
+.btn-gold:hover{background:#d9a855;}
+.btn-ghost{border-color:rgba(239,243,247,.5);color:var(--mist);background:transparent;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero .micro{margin-top:1.3rem;font-size:.92rem;font-style:italic;color:#9FB0C9;}
 
-  /* ---------- Map strip ---------- */
-  .map-strip{background:var(--mist);padding:2rem 0;text-align:center;border-bottom:1px solid rgba(26,43,74,.08);}
-  .map-strip__text{font-size:.98rem;color:var(--slate);max-width:64ch;margin:0 auto;}
-  .map-strip__buttons{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
-  .btn-gold-outline{
-    background:transparent;
-    border:1.5px solid var(--navy);
-    color:var(--navy);
-    font-weight:700;
-    font-size:.92rem;
-    padding:.7rem 1.3rem;
-  }
-  .btn-gold-outline:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
-  @media (max-width:600px){
-    .map-strip__buttons{flex-direction:column;align-items:center;}
-  }
+/* ---------- Trust strip ---------- */
+.trust{background:var(--navy-deep);border-top:1px solid rgba(201,147,58,.25);padding:1.2rem 0;}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:center;align-items:center;}
+.trust span{color:#C7D2E3;font-size:.92rem;letter-spacing:.04em;}
+.trust b{color:var(--gold);font-weight:700;}
 
-  /* ---------- Series ---------- */
-  .series{background:var(--navy);padding:5.5rem 0 5rem;text-align:center;}
-  .series h2{margin-left:auto;margin-right:auto;color:#fff;}
-  .series > .wrap > p{margin-left:auto;margin-right:auto;color:#CBD6E4;}
-  .series .manual{text-align:left;border:none;}
-  .series-grid{
-    display:grid;
-    grid-template-columns:repeat(5, 1fr);
-    gap:1rem;
-    margin-top:2.6rem;
-  }
-  @media (max-width:1010px){
-    .series-grid{grid-template-columns:repeat(2, 1fr);}
-  }
-  @media (max-width:480px){
-    .series-grid{grid-template-columns:1fr;}
-  }
-  .manual{
-    background:var(--paper);
-    border-top:3px solid var(--gold);
-    padding:1.15rem 1rem 1rem;
-    text-decoration:none;
-    color:var(--slate);
-    display:flex;
-    flex-direction:column;
-    gap:.4rem;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .manual:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.28);}
-  .manual .num{
-    font-size:.72rem;
-    letter-spacing:.22em;
-    color:var(--gold);
-  }
-  .manual h3{
-    font-size:1.05rem;
-    color:var(--navy);
-    line-height:1.25;
-  }
-  .manual p{font-size:.86rem;line-height:1.5;}
-  .series-cta{margin-top:2.6rem;text-align:center;}
-  .series-cta .btn-gold{font-size:1.05rem;}
-  .pricing-strip{
-    margin-top:2.8rem;
-    padding-top:2.4rem;
-    border-top:1px solid rgba(245,230,200,.18);
-  }
-  .pricing-strip .bundles-note{
-    color:#CBD6E4;
-    font-size:.92rem;
-    max-width:64ch;
-    margin:0 auto 1.6rem;
-  }
-  .pricing-strip .bundles-note strong{color:var(--gold-light);}
-  .bundle-row{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1rem;
-    max-width:820px;
-    margin:0 auto 2.2rem;
-    text-align:left;
-  }
-  @media (max-width:700px){
-    .bundle-row{grid-template-columns:1fr;}
-  }
-  .bundle-item .name{
-    color:var(--navy);
-    font-weight:700;
-    font-size:1.05rem;
-    display:block;
-    margin-bottom:.3rem;
-  }
-  .bundle-item .contents{
-    color:var(--slate);
-    font-size:.86rem;
-    line-height:1.5;
-  }
-  .price-tiles{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:1rem;
-  }
-  @media (max-width:760px){
-    .price-tiles{grid-template-columns:repeat(2, 1fr);}
-  }
-  .price-tile{
-    background:var(--navy-deep);
-    border-top:2px solid var(--gold);
-    padding:1rem .9rem;
-  }
-  a.price-tile{
-    text-decoration:none;
-    display:block;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  a.price-tile:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.35);}
-  .price-tile .amount{
-    font-size:1.4rem;
-    font-weight:700;
-    color:#fff;
-    margin-bottom:.3rem;
-  }
-  .price-tile .label{
-    font-size:.8rem;
-    color:#9FB0C6;
-    line-height:1.4;
-  }
-  .series .smallprint{
-    text-align:center;
-    margin-top:1.1rem;
-    font-size:.88rem;
-    color:#6B7A8C;
-  }
+/* ---------- Story ---------- */
+.story{padding:5.5rem 0;}
+.story-grid{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:3.5rem;align-items:start;}
+/* FIX: photo of the fellow traveller — placeholder frame shows where Spencer's portrait goes */
+.photo-frame{background:linear-gradient(160deg,var(--mist),#fff);border:1px solid #D8DFE8;border-radius:6px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:#8A97A8;font-style:italic;box-shadow:0 10px 30px rgba(26,43,74,.08);}
+.photo-frame svg{margin-bottom:1rem;opacity:.55;}
+.photo-frame small{font-style:normal;font-size:.8rem;margin-top:.6rem;color:#A7B2C0;}
+.story p{margin-bottom:1.2rem;max-width:62ch;}
+.story .sig{color:var(--gold);font-style:italic;font-size:1.1rem;}
+.cred-card{background:var(--navy);color:var(--mist);padding:1.4rem 1.6rem;border-radius:6px;margin-top:1.8rem;font-size:.95rem;max-width:62ch;}
+.cred-card b{color:var(--gold);}
+.press{margin-top:1.1rem;font-size:.95rem;}
+.press a{color:var(--accent);}
 
-  /* ---------- Story ---------- */
-  .story{background:var(--paper);padding:5.5rem 0;}
-  .story .wrap{
-    display:grid;
-    grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr);
-    gap:3.5rem;
-    align-items:start;
-  }
-  .story-side{
-    border-left:3px solid var(--gold);
-    padding-left:1.4rem;
-  }
-  .story-side .sig{
-    margin-top:1.4rem;
-    font-style:italic;
-    color:var(--navy);
-  }
-  .creds{
-    background:var(--navy);
-    color:var(--mist);
-    padding:1.4rem 1.5rem;
-    margin-top:2rem;
-    font-size:.92rem;
-    line-height:1.6;
-  }
-  .creds strong{color:var(--gold-light);}
-  .press{
-    margin-top:1.1rem;
-    font-size:.9rem;
-    font-style:italic;
-    color:var(--slate);
-  }
-  .press a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
-  .press a:hover{color:var(--navy);}
+/* ---------- Free start ---------- */
+.free{background:var(--mist);padding:5rem 0;}
+.free-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;margin-top:2.2rem;}
+.free-card{background:#fff;border-radius:6px;padding:2rem;border:1px solid #DEE5ED;box-shadow:0 6px 20px rgba(26,43,74,.05);}
+.free-card h3{margin-bottom:.7rem;}
+.free-card.primary{border-top:4px solid var(--gold);}
+.free-card p{font-size:.98rem;margin-bottom:1.4rem;}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;background:var(--gold-light);color:#7A6A45;padding:.28rem .7rem;border-radius:3px;margin-bottom:1rem;font-weight:700;}
 
-  /* ---------- Check-in ---------- */
-  .checkin{background:var(--gold-light);padding:5rem 0;}
-  .checkin .wrap{max-width:760px;text-align:center;}
-  .checkin h2{margin-left:auto;margin-right:auto;}
-  .checkin p{max-width:54ch;margin:0 auto 2rem;}
-  .checkin form{
-    display:flex;
-    gap:.7rem;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-  .checkin input[type=email]{
-    font-family:var(--serif);
-    font-size:1rem;
-    padding:.85rem 1.1rem;
-    border:1px solid #C9B180;
-    border-radius:2px;
-    min-width:min(320px, 80vw);
-    background:#fff;
-    color:var(--slate);
-  }
-  .checkin .btn-navy{background:var(--navy);color:#fff;font-weight:700;}
-  .checkin .btn-navy:hover{background:var(--navy-deep);}
-  .checkin .fineprint{font-size:.85rem;margin-top:1.2rem;color:#7A6A45;}
-  .form-status{margin-top:1rem;font-weight:700;color:var(--navy);min-height:1.4em;}
+/* ---------- Series ---------- */
+.series{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--mist);padding:5.5rem 0;}
+.series h2,.series h3{color:#fff;}
+.series .lead{max-width:60ch;margin:0 auto 3rem;text-align:center;color:#C7D2E3;}
+.series .eyebrow,.series h2{text-align:center;}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;}
+.manual{background:#fff;color:var(--slate);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;}
+.manual:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.35);}
+/* CSS book cover — placeholder until real cover art exists */
+.cover{aspect-ratio:3/3.4;display:flex;flex-direction:column;justify-content:space-between;padding:1rem .95rem;color:#F5E6C8;position:relative;}
+.cover::after{content:"";position:absolute;top:0;bottom:0;left:6px;width:1px;background:rgba(245,230,200,.35);}
+.cover .num{font-size:1.6rem;font-weight:700;color:var(--gold);}
+.cover .ctitle{font-size:1.02rem;font-weight:700;line-height:1.25;color:#fff;}
+.cover .brand{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,230,200,.75);}
+.manual .body{padding:.9rem .95rem 1.1rem;display:flex;flex-direction:column;gap:.55rem;flex:1;}
+.manual .desc{font-size:.85rem;line-height:1.5;flex:1;}
+.manual .price{font-weight:700;color:var(--navy);font-size:.95rem;}
+.manual .buy{font-size:.82rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;}
 
-  /* ---------- Footer ---------- */
-  footer{background:var(--navy-deep);color:#9FB0C6;padding:3rem 0 2.5rem;font-size:.92rem;}
-  footer .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-  footer a{color:var(--gold-light);text-decoration:none;}
-  footer a:hover{text-decoration:underline;}
-  footer .brandline{color:#fff;letter-spacing:.28em;font-size:.8rem;}
+/* ---------- Pricing ---------- */
+.pricing{background:var(--navy-deep);padding:0 0 5.5rem;color:var(--mist);}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.5rem;align-items:stretch;}
+.tier{background:rgba(255,255,255,.04);border:1px solid rgba(201,147,58,.28);border-radius:6px;padding:1.7rem 1.4rem;display:flex;flex-direction:column;text-align:center;position:relative;}
+.tier .amount{font-size:2rem;font-weight:700;color:#fff;margin:.4rem 0 .2rem;}
+.tier .per{font-size:.85rem;color:#9FB0C9;margin-bottom:1rem;}
+.tier .what{font-size:.92rem;color:#C7D2E3;flex:1;margin-bottom:1.4rem;}
+.pricing .tier h3{color:#fff;}
+/* FIX: emphasise the £119 Complete Library as best value */
+.tier.best{background:rgba(201,147,58,.12);border:2px solid var(--gold);transform:scale(1.03);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy-deep);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .9rem;border-radius:3px;white-space:nowrap;}
+.tier .save{color:var(--gold);font-size:.85rem;font-weight:700;}
 
-  @media (max-width:760px){
-    .hero{padding:4.5rem 0 4rem;}
-    .btn-ghost{margin-left:0;margin-top:.8rem;}
-    .story .wrap{grid-template-columns:1fr;gap:2.2rem;}
-  }
+/* ---------- Framework ---------- */
+.framework{padding:5.5rem 0;text-align:center;}
+.framework .lead{max-width:56ch;margin:0 auto 2.6rem;}
+.letters{display:flex;justify-content:center;gap:.55rem;flex-wrap:wrap;}
+.letter{display:flex;align-items:stretch;border-radius:4px;overflow:hidden;box-shadow:0 4px 14px rgba(26,43,74,.12);}
+.letter .l{background:var(--navy);color:#fff;font-size:1.5rem;font-weight:700;padding:.7rem .95rem;display:flex;align-items:center;}
+.letter .w{background:var(--gold-light);color:#7A6A45;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;padding:0 .8rem;animation:wfade .55s ease both;}
+@keyframes wfade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.from-manual{margin-top:1.4rem;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
 
-  /* ---------- Nav ---------- */
-  nav.site-nav{background:var(--navy-deep);padding:1rem 0;}
-  nav.site-nav .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-  nav.site-nav .brand{color:#fff;text-decoration:none;letter-spacing:.2em;font-size:.9rem;text-transform:uppercase;}
-  nav.site-nav .links{display:flex;gap:1.6rem;}
-  nav.site-nav .links a{color:var(--gold-light);text-decoration:none;font-size:.92rem;}
-  nav.site-nav .links a:hover{text-decoration:underline;}
-  nav.site-nav .links a.current{color:#fff;font-weight:700;}
+/* ---------- Testimonials ---------- */
+.quotes{background:var(--mist);padding:5rem 0;}
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.2rem;}
+blockquote{background:#fff;border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:1.5rem 1.5rem 1.2rem;font-size:.96rem;box-shadow:0 6px 20px rgba(26,43,74,.05);}
+blockquote p{font-style:italic;margin-bottom:.9rem;}
+blockquote footer{font-size:.85rem;color:#8A97A8;font-style:normal;}
+
+/* ---------- Email capture ---------- */
+.checkin{background:var(--gold-light);padding:5rem 0;}
+.checkin .wrap{max-width:720px;text-align:center;}
+.checkin p{max-width:56ch;margin:0 auto 2rem;}
+.checkin form{display:flex;gap:.7rem;max-width:520px;margin:0 auto;}
+.checkin input[type=email]{flex:1;padding:.95rem 1.1rem;font-size:1rem;font-family:inherit;border:2px solid #D9C9A0;border-radius:4px;background:#fff;color:var(--slate);}
+.btn-navy{background:var(--navy);color:#fff;font-weight:700;border:none;padding:.95rem 1.6rem;border-radius:4px;cursor:pointer;font-family:inherit;font-size:1rem;}
+.btn-navy:hover{background:var(--navy-deep);}
+.fineprint{font-size:.85rem;margin-top:1.2rem;color:#7A6A45;}
+.form-status{margin-top:1.2rem;font-weight:700;color:var(--navy);}
+
+/* ---------- FAQ ---------- */
+.faq{padding:5rem 0;}
+.faq .wrap{max-width:760px;}
+.faq details{border-bottom:1px solid #DEE5ED;padding:1.1rem 0;}
+.faq summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq summary::after{content:"+";color:var(--gold);font-size:1.4rem;margin-left:1rem;}
+.faq details[open] summary::after{content:"–";}
+.faq details p{margin-top:.8rem;max-width:62ch;}
+
+/* ---------- Crisis note ---------- */
+.crisis{background:var(--mist);padding:1.6rem 0;text-align:center;font-size:.95rem;}
+.crisis b{color:var(--navy);}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--navy-deep);color:#9FB0C9;padding:3rem 0 2.4rem;text-align:center;font-size:.92rem;}
+.site-footer .mark{letter-spacing:.5em;color:var(--gold);margin-bottom:1.2rem;font-size:.95rem;}
+.better{color:var(--gold-light);font-style:italic;margin:.4rem 0 1rem;font-size:.95rem;}
+.site-footer a{color:#C7D2E3;}
+.site-footer .links{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;}
+
+/* ---------- Demo toast ---------- */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--navy);color:#fff;padding:.9rem 1.5rem;border-radius:6px;font-size:.92rem;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:transform .3s ease;z-index:99;max-width:90vw;text-align:center;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+@media (max-width:960px){.grid5{grid-template-columns:repeat(3,1fr);}.price-grid{grid-template-columns:repeat(2,1fr);}.tier.best{transform:none;}.quote-grid{grid-template-columns:1fr;}.story-grid,.free-grid{grid-template-columns:1fr;}.photo-frame{max-width:340px;margin:0 auto;}}
+@media (max-width:600px){.grid5{grid-template-columns:repeat(2,1fr);}.price-grid{grid-template-columns:1fr;}nav{gap:1rem;}.checkin form{flex-direction:column;}}
 </style>
 </head>
 <body>
 
-<!-- ============================================================
-     EDIT THESE THREE VALUES BEFORE PUBLISHING
-     ============================================================ -->
-<script>
-  const CONFIG = {
-    PAYHIP_URL: "https://payhip.com/CREATEbyCoachall/",
-    FORM_ACTION: "https://assets.mailerlite.com/jsonp/2489057/forms/192036572284061279/subscribe",
-    TERMS_URL: "https://payhip.com/CREATEbyCoachall/terms-and-conditions-of-sale",
-    REFUNDS_URL: "https://payhip.com/CREATEbyCoachall/refund-and-cancellation-policy",
-    // Set these once the two free PDFs are uploaded (e.g. as free Payhip products,
-    // or any direct-download URL). Until filled in, the links below are disabled
-    // rather than pointing at a dead "#".
-    COMPANION_GUIDE_URL: "https://payhip.com/b/0gI6l",
-    START_HERE_URL: "https://payhip.com/b/6V8fq",
-    // The Complete Library — confirmed live product URL.
-    LIBRARY_URL: "https://payhip.com/b/vcswj",
-    // Library + Coaching Session (£194) — URL not yet confirmed this session.
-    // Falls back to the storefront link until this is filled in.
-    LIBRARY_COACHING_URL: "",
-    // Individual manual product pages, in series order 01–10.
-    // Only Creative Journey (index 0) and Sobriety & Recovery (index 7) have been
-    // reconfirmed directly in this session. The other eight are carried over from
-    // an earlier session and NOT independently reverified — check each against
-    // your live Payhip dashboard before relying on them.
-    MANUAL_URLS: [
-      "https://payhip.com/b/Abciy",  // 01 Creative Journey — confirmed
-      "https://payhip.com/b/slB6P",  // 02 Meditation — unverified this session
-      "https://payhip.com/b/vfmGp",  // 03 Breathwork — unverified this session
-      "https://payhip.com/b/OA2iD",  // 04 Better Habits — unverified this session
-      "https://payhip.com/b/XeROS",  // 05 Wellness — unverified this session
-      "https://payhip.com/b/UB854",  // 06 Slow Life — unverified this session
-      "https://payhip.com/b/jGbE2",  // 07 Primal Fitness — unverified this session
-      "https://payhip.com/b/uD0sm",  // 08 Sobriety & Recovery — confirmed
-      "https://payhip.com/b/67Pfb",  // 09 Neurowellness & Craft — unverified this session
-      "https://payhip.com/b/RPnoV"   // 10 Grief & Loss — unverified this session
-    ],
-    // Optional: real word sets for the C.R.E.A.T.E. letters, one array per
-    // manual. Leave empty and the letters display without rotating words.
-    // Example: WORD_SETS: [["...","...","...","...","...","..."], [...]]
-    WORD_SETS: []
-  };
-</script>
-
-<nav class="site-nav">
+<header>
   <div class="wrap">
-    <a class="brand" href="/">Coachall</a>
-    <div class="links">
-      <a href="/" class="current">Manuals</a>
-      <a href="/coaching.html">Coaching</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow brand-line">Coachall &nbsp;·&nbsp; Spencer Hall &nbsp;·&nbsp; RCP (CCAR) &nbsp;·&nbsp; IARCP</span>
-    <div class="hero-rule brand-rule"></div>
-    <h1>Once Burned.<br>Now Revived.</h1>
-    <div class="hero-rule"></div>
-    <p class="lede">Twenty-five years lost.</p>
-    <p class="lede">Lived experience became the C.R.E.A.T.E. Series — for anyone who needs it.</p>
-    <a class="btn btn-gold" href="#series">Browse the series</a>
-    <a class="btn btn-ghost" href="#checkin">Start Your Honest Check-In</a>
-    <p class="btn-caption">The Honest Check-In is gentle questions to take stock of where you are. No scores, no judgement.</p>
+    <a class="logo" href="index.html">COACHALL</a>
+    <nav>
+      <a href="#series">Manuals</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="organisations.html">For Organisations</a>
+      <a href="#story">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#checkin">Free Check-In</a>
+    </nav>
   </div>
 </header>
 
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="inner">
+    <span class="eyebrow">Coachall &nbsp;·&nbsp; Spencer Hall &nbsp;·&nbsp; RCP (CCAR) &nbsp;·&nbsp; IARCP</span>
+    <div class="rule"></div>
+    <h1>Once Burned.<br>Now Revived.</h1>
+    <div class="rule"></div>
+    <!-- FIX: the 5-second test — a stranger now knows the what, who and outcome instantly -->
+    <p class="sub"><strong>Ten practical manuals for rebuilding your life after addiction</strong> — plus one-to-one coaching. Written by someone who spent twenty-five years inside harmful habits, and built his way out.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#checkin">Get the free Honest Check-In</a>
+      <a class="btn btn-ghost" href="#series">Browse the series</a>
+    </div>
+    <p class="micro">Gentle questions to take stock of where you are. No scores, no judgement.</p>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<div class="trust">
+  <div class="wrap">
+    <span><b>Recovery Coach Professional</b> — CCAR accredited</span>
+    <span><b>IARCP</b> member</span>
+    <span>As featured in <b>Barcelona Metropolitan</b></span>
+    <span><b>25 years</b> a professional gambler</span>
+  </div>
+</div>
+
+<!-- ================= STORY ================= -->
 <section class="story" id="story">
   <div class="wrap">
-    <div class="story-side">
-      <span class="eyebrow">Spencer's story</span>
-      <h2>Written by a fellow traveller.</h2>
-      <p class="sig">— Spencer Hall, Brighton</p>
-      <div class="creds">
-        <strong>Credentials.</strong> Recovery Coach Professional (RCP), internationally accredited through CCAR via Recovery Coach Academy UK. Member of the International Association of Recovery Coach Professionals (IARCP).
+    <div class="story-grid">
+      <div class="photo-frame" aria-label="Photo of Spencer Hall">
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#8A97A8" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+        Photo of Spencer here<br>— the fellow traveller, in his workshop
+        <small>A real portrait converts far better than any stock image</small>
       </div>
-      <p class="press">As featured in <a href="https://www.barcelona-metropolitan.com/living/business/a-day-in-the-life-spencer-hall/" target="_blank" rel="noopener">Barcelona Metropolitan Magazine</a> — "A Day in the Life: Spencer Hall".</p>
-    </div>
-    <div>
-      <p>I spent more than twenty-five years inside a loop of harmful habits. My world was horse racing, and gambling was the loudest habit of them all — but it wasn't the only one. Recovery, when it came, didn't arrive through willpower alone. It arrived through making things.</p>
-      <p>In Barcelona I built a furniture workshop around yakisugi, the Japanese craft of charring wood — taking something through fire and finding it stronger and more beautiful on the other side. Alongside it I grew a Meetup community of hundreds, and in the workshop I taught the craft to others — watching creativity transform people, because it was quietly transforming me.</p>
-      <p>Back home in Brighton I trained as a recovery coach and shaped everything I'd learned into a framework I could put in your hands. That framework became C.R.E.A.T.E., and these ten manuals are the result. I wrote them the way I taught in the workshop: beside you, not above you.</p>
+      <div>
+        <span class="eyebrow">Spencer's story</span>
+        <h2>Written by a fellow traveller.</h2>
+        <p class="sig">— Spencer Hall, Brighton</p>
+        <p>I spent more than twenty-five years inside a loop of harmful habits. My world was horse racing, and gambling was the loudest habit of them all — but it wasn't the only one. Recovery, when it came, didn't arrive through willpower alone. It arrived through making things.</p>
+        <p>In Barcelona I built a furniture workshop around yakisugi, the Japanese craft of charring wood — taking something through fire and finding it stronger and more beautiful on the other side. Alongside it I grew a Meetup community of hundreds, and in the workshop I taught the craft to others — watching creativity transform people, because it was quietly transforming me.</p>
+        <p>Back home in Brighton I trained as a Recovery Coach Professional — designated by CCAR through Recovery Coach Academy UK — and shaped everything I'd learned into a framework I could put in your hands. That framework became C.R.E.A.T.E., and these ten manuals are the result, written the way I taught in the workshop: beside you, not above you. Since then I've delivered recovery coaching within Reframe Coaching's gambling aftercare programme, and served on the development panel of the Gambling Lived Experience Network (GLEN).</p>
+        <div class="cred-card">
+          <b>Credentials.</b> Recovery Coach Professional (RCP), internationally accredited through CCAR via Recovery Coach Academy UK. Member of the International Association of Recovery Coach Professionals (IARCP).
+        </div>
+        <p class="press">As featured in <a href="https://www.barcelona-metropolitan.com/living/business/a-day-in-the-life-spencer-hall/" rel="noopener">Barcelona Metropolitan Magazine</a> — "A Day in the Life: Spencer Hall".</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="map-strip" id="map">
+<!-- ================= FREE START ================= -->
+<section class="free" id="free">
   <div class="wrap">
-    <p class="map-strip__text" style="margin-bottom:1.2rem;">
-      New here and not sure where to start? Three free pieces, no email required:
-    </p>
-    <div class="map-strip__buttons">
-      <a href="https://payhip.com/b/Q0FwL" class="payhip-buy-button btn btn-gold-outline" data-theme="none" data-product="Q0FwL">The Honest Check-In</a>
-      <a href="https://payhip.com/b/6V8fq" class="payhip-buy-button btn btn-gold-outline" data-theme="none" data-product="6V8fq">C.R.E.A.T.E. Start Here</a>
-      <a href="https://payhip.com/b/0gI6l" class="payhip-buy-button btn btn-gold-outline" data-theme="none" data-product="0gI6l">The Companion Guide</a>
+    <span class="eyebrow">Start free</span>
+    <h2>Not sure where to begin? Begin here.</h2>
+    <div class="free-grid">
+      <div class="free-card primary">
+        <span class="tag">No email needed</span>
+        <h3>The Honest Check-In</h3>
+        <p>Gentle questions to take stock of where you are — no scores, no judgement. Download it straight away, keep it, come back whenever you're ready.</p>
+        <!-- Live: direct Payhip free product link -->
+        <a class="btn btn-gold" href="https://payhip.com/b/Q0FwL">Download free</a>
+      </div>
+      <div class="free-card">
+        <span class="tag">With the free letters</span>
+        <h3>Start Here + Companion Guide</h3>
+        <p>Two more free pieces — how the framework fits together, and how to use any of the manuals. Sign up below and they arrive with a handful of short letters that help you find the manual that fits what you're carrying.</p>
+        <a class="btn btn-navy demo-scroll" href="#checkin">Send me the guides</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ================= SERIES ================= -->
 <section class="series" id="series">
   <div class="wrap">
     <span class="eyebrow">The C.R.E.A.T.E. Series</span>
     <h2>Ten manuals. One framework. Your pace.</h2>
-    <p style="max-width:62ch;">Every manual leaves you with something you keep — habits that hold, rest that restores, a calmer mind, closer connections, or the quiet confidence of making something with your own hands. Start with the one your life is asking for.</p>
+    <p class="lead">Every manual leaves you with something you keep — habits that hold, rest that restores, a calmer mind, closer connections, or the quiet confidence of making something with your own hands. Start with the one your life is asking for.</p>
+    <div class="grid5" id="manualGrid"></div>
+  </div>
+</section>
 
-    <div class="series-grid">
-      <a class="manual" data-manual-index="0" href="#">
-        <span class="num">01</span><h3>Creative Journey</h3>
-        <p>Where the framework begins — rediscovering creativity as a way back to yourself.</p>
-      </a>
-      <a class="manual" data-manual-index="1" href="#">
-        <span class="num">02</span><h3>Meditation</h3>
-        <p>Stillness as a practice, not a performance. Attention you can rebuild.</p>
-      </a>
-      <a class="manual" data-manual-index="2" href="#">
-        <span class="num">03</span><h3>Breathwork</h3>
-        <p>The one tool you carry everywhere, and how to actually use it.</p>
-      </a>
-      <a class="manual" data-manual-index="3" href="#">
-        <span class="num">04</span><h3>Better Habits</h3>
-        <p>Small changes that hold — built for ease, not willpower.</p>
-      </a>
-      <a class="manual" data-manual-index="4" href="#">
-        <span class="num">05</span><h3>Wellness</h3>
-        <p>The everyday foundations: rest, food, movement, and honest maintenance.</p>
-      </a>
-      <a class="manual" data-manual-index="5" href="#">
-        <span class="num">06</span><h3>Slow Life</h3>
-        <p>Doing less, deliberately. A quieter pace as a form of recovery.</p>
-      </a>
-      <a class="manual" data-manual-index="6" href="#">
-        <span class="num">07</span><h3>Primal Fitness</h3>
-        <p>Natural movement for real bodies — strength without the gym theatre.</p>
-      </a>
-      <a class="manual" data-manual-index="7" href="#">
-        <span class="num">08</span><h3>Sobriety &amp; Recovery</h3>
-        <p>The framework applied where it was forged — living well beyond addiction.</p>
-      </a>
-      <a class="manual" data-manual-index="8" href="#">
-        <span class="num">09</span><h3>Neurowellness &amp; Craft</h3>
-        <p>What working with your hands does for your mind, and how to begin.</p>
-      </a>
-      <a class="manual" data-manual-index="9" href="#">
-        <span class="num">10</span><h3>Grief &amp; Loss</h3>
-        <p>Creating through loss — gentle structure for the hardest of times.</p>
-      </a>
-    </div>
-
-    <div class="pricing-strip">
-      <p class="bundles-note">Manuals also come as three themed bundles, or all ten together in the Complete Library.</p>
-      <div class="bundle-row">
-        <a class="manual bundle-item" href="https://payhip.com/b/ht4jU">
-          <span class="name">The Calm Path</span>
-          <span class="contents">Meditation, Breathwork, Slow Life</span>
-        </a>
-        <a class="manual bundle-item" href="https://payhip.com/b/Jqzt8">
-          <span class="name">The Fresh Start</span>
-          <span class="contents">Better Habits, Wellness, Primal Fitness</span>
-        </a>
-        <a class="manual bundle-item" href="https://payhip.com/b/im9I7">
-          <span class="name">The Hardest Times</span>
-          <span class="contents">Sobriety &amp; Recovery, Neurowellness &amp; Craft, Grief &amp; Loss</span>
-        </a>
+<!-- ================= PRICING ================= -->
+<section class="pricing">
+  <div class="wrap">
+    <span class="eyebrow" style="text-align:center;">Bundles & pricing</span>
+    <h2 style="color:#fff;text-align:center;">One manual — or the whole shelf.</h2>
+    <div class="price-grid">
+      <div class="tier">
+        <h3>Single manual</h3>
+        <div class="amount">£19</div>
+        <div class="per">one PDF, yours for good</div>
+        <p class="what">Pick the one your life is asking for. Every manual stands alone.</p>
+        <a class="btn btn-ghost" href="#series">Choose your manual</a>
       </div>
-      <div class="price-tiles">
-        <div class="price-tile">
-          <div class="amount">£19</div>
-          <div class="label">Single manual</div>
-        </div>
-        <div class="price-tile">
-          <div class="amount">£39</div>
-          <div class="label">Three-manual bundle</div>
-        </div>
-        <a class="price-tile" data-link="library" href="#">
-          <div class="amount">£119</div>
-          <div class="label">Complete Library — all ten manuals</div>
-        </a>
-        <a class="price-tile" data-link="library-coaching" href="#">
-          <div class="amount">£194</div>
-          <div class="label">Complete Library + a coaching session</div>
-        </a>
+      <div class="tier">
+        <h3>Themed bundle</h3>
+        <div class="amount">£39</div>
+        <div class="per">three manuals — save £18</div>
+        <p class="what"><b>The Calm Path</b> · Meditation, Breathwork, Slow Life<br><b>The Fresh Start</b> · Habits, Wellness, Primal Fitness<br><b>The Hardest Times</b> · Sobriety, Craft, Grief</p>
+        <a class="btn btn-ghost" href="https://payhip.com/CREATEbyCoachall" target="_blank" rel="noopener">Pick a bundle</a>
       </div>
-    </div>
-
-    <div class="series-cta">
-      <a class="btn btn-gold" data-link="payhip" href="#">Visit the Coachall store</a>
+      <!-- FIX: best-value emphasis on the highest-margin product -->
+      <div class="tier best">
+        <span class="badge">Best value</span>
+        <h3>Complete Library</h3>
+        <div class="amount">£119</div>
+        <div class="per">all ten manuals <span class="save">— save £71</span></div>
+        <p class="what">The full framework, every path, every chapter. Buy once, keep forever, work through at your pace.</p>
+        <a class="btn btn-gold" href="https://payhip.com/b/vcswj">Get the Complete Library</a>
+      </div>
+      <div class="tier">
+        <h3>Library + Coaching</h3>
+        <div class="amount">£194</div>
+        <div class="per">all ten manuals + one session</div>
+        <p class="what">The whole shelf, plus an hour with me to point it at your actual life. <span class="save">Session alone is £75.</span></p>
+        <!-- FIX: direct product link, not the general storefront -->
+        <a class="btn btn-ghost" href="mailto:spencer@coachall.co.uk?subject=Library%20%2B%20Session%20Enquiry">Get Library + Session</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ================= FRAMEWORK ================= -->
 <section class="framework">
   <div class="wrap">
     <span class="eyebrow">The framework</span>
-    <h2>Six letters that stay fixed. Words that change to meet you.</h2>
-    <p>Most frameworks ask you to fit their shape. C.R.E.A.T.E. works the other way round. The six letters never change, but the words behind them do.<span id="seeHow"></span> The structure holds steady while the meaning meets you where you are.</p>
-    <div class="acronym" aria-label="The C.R.E.A.T.E. acronym as it appears in the manuals">
-      <div class="acro-block"><span class="acro-letter">C</span><span class="acro-word" data-slot="0">Choose</span></div>
-      <div class="acro-block"><span class="acro-letter">R</span><span class="acro-word" data-slot="1">Refine</span></div>
-      <div class="acro-block"><span class="acro-letter">E</span><span class="acro-word" data-slot="2">Empower</span></div>
-      <div class="acro-block"><span class="acro-letter">A</span><span class="acro-word" data-slot="3">Achieve</span></div>
-      <div class="acro-block"><span class="acro-letter">T</span><span class="acro-word" data-slot="4">Triumph</span></div>
-      <div class="acro-block"><span class="acro-letter">E</span><span class="acro-word" data-slot="5">Excel</span></div>
-    </div>
-    <p class="set-label">From the manual: <span id="setName">Creative Journey</span></p>
+    <h2>Six letters that stay fixed.<br>Words that change to meet you.</h2>
+    <p class="lead">Most frameworks ask you to fit their shape. C.R.E.A.T.E. works the other way round. The six letters never change, but the words behind them do — the structure holds steady while the meaning meets you where you are.</p>
+    <div class="letters" id="letters"></div>
+    <div class="from-manual" id="fromManual">From the manual: Wellness</div>
   </div>
 </section>
 
+<!-- ================= TESTIMONIALS ================= -->
+<section class="quotes">
+  <div class="wrap">
+    <span class="eyebrow">What people say</span>
+    <h2>In their words.</h2>
+    <div class="quote-grid">
+      <blockquote><p>"He really made me feel heard and understood. He listened with intent whilst being able to navigate me through to a place where I could find solutions to help me move forward."</p><footer>— Beatrice P.</footer></blockquote>
+      <blockquote><p>"I was really suffering with anxiety and my confidence and Spencer really helped me get over my issues, pushing me further and to be more self aware."</p><footer>— Bobby T.</footer></blockquote>
+      <blockquote><p>"Spencer has been working for us as a freelance Recovery Coach, providing one to one support to individuals in recovery. A great resource to individuals affected by gambling."</p><footer>— Reframe Coaching</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EMAIL CAPTURE ================= -->
 <section class="checkin" id="checkin">
   <div class="wrap">
     <span class="eyebrow">Want more than the PDF?</span>
-    <h2>Get Guided To The Right Manual</h2>
-    <p>You can grab the Honest Check-In free, above — no email needed. If you'd like more than that, sign up here and I'll send the guide plus a handful of short letters that help you work out which manual actually fits what you're carrying.</p>
-    <form data-form="checkin" method="post" action="">
-      <label for="email" style="position:absolute;left:-9999px;">Email address</label>
-      <input type="email" id="email" name="fields[email]" placeholder="Your email address" required>
+    <h2>Get guided to the right manual.</h2>
+    <p>Sign up and I'll send the <b>Start Here</b> guide and <b>Companion Guide</b>, plus a handful of short letters that help you work out which manual actually fits what you're carrying. Unsubscribe any time.</p>
+    <!-- WIRED (Day 0 complete): posts directly to the site's own MailerLite endpoint
+         (account 2489057, form 192036572284061279), lifted from the live site's config. The MailerLite
+         confirmation opens in a new tab. Can be swapped for the official dashboard embed snippet at any time. -->
+    <form id="signupForm" method="post" action="https://assets.mailerlite.com/jsonp/2489057/forms/192036572284061279/subscribe" target="_blank" rel="noopener">
+      <input type="email" name="fields[email]" placeholder="Your email address" required aria-label="Email address">
       <input type="hidden" name="ml-submit" value="1">
-      <button class="btn btn-navy" type="submit">Send me the guide and letters</button>
+      <input type="hidden" name="anticsrf" value="true">
+      <button class="btn-navy" type="submit">Send me the guides</button>
     </form>
-    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-    <p class="fineprint">The guide, plus a few short letters. Unsubscribe any time.</p>
+    <p class="form-status" id="formStatus" role="status"></p>
+    <p class="fineprint">Your address is used for the guides and letters only. See the <a href="privacy.html">privacy notice</a>.</p>
   </div>
 </section>
 
-<footer>
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
   <div class="wrap">
-    <div>
-      <p class="brandline">C O A C H A L L</p>
-      <p>©2026 Coachall · Brighton, UK</p>
-    </div>
-    <div>
-      <p><a href="mailto:spencer@coachall.co.uk">spencer@coachall.co.uk</a></p>
-      <p><a data-link="terms" href="#">Terms &amp; Conditions of Sale</a> · <a data-link="refunds" href="#">Refunds &amp; Cancellation</a></p>
+    <span class="eyebrow">Questions</span>
+    <h2>Asked, and answered honestly.</h2>
+    <details><summary>Is this therapy?</summary><p>No. The manuals and coaching are structured self-help and recovery coaching, built on lived experience and the C.R.E.A.T.E. framework. They aren't medical, psychiatric or therapeutic care — and they work well alongside it. If you're in crisis, please contact your GP or the Samaritans (116 123) first.</p></details>
+    <details><summary>What exactly do I get when I buy a manual?</summary><p>A beautifully formatted PDF you download immediately and keep forever. Read it on any device or print it. Each one is a complete, self-contained journey through the C.R.E.A.T.E. framework applied to its subject — with exercises, check-ins and things to make, not just things to read.</p></details>
+    <details><summary>Which manual should I start with?</summary><p>The one your life is asking for. If you're not sure, take the free Honest Check-In first — it was built to answer exactly this question. Still unsure? <a href="mailto:spencer@coachall.co.uk">Email me</a>, I read everything.</p></details>
+    <details><summary>I'm not creative. Will this still work for me?</summary><p>Yes — this framework was built by someone who hadn't made anything in decades before it saved him. "Creative" here means small, doable acts: a walk done differently, a sentence written honestly, a shelf sanded smooth. No talent required, only willingness.</p></details>
+    <details><summary>Can I get a refund?</summary><p>Yes. If a manual isn't what you hoped, email me within 14 days and I'll refund you — see the <a href="https://payhip.com/CREATEbyCoachall/refund-and-cancellation-policy" rel="noopener">refund policy</a> for the details.</p></details>
+    <details><summary>Do you work with gambling problems specifically?</summary><p>Gambling was my loudest habit, and the Sobriety &amp; Recovery manual was forged there. Coaching clients affected by gambling are very welcome — the free discovery call is the right first step.</p></details>
+  </div>
+</section>
+
+<!-- ================= CRISIS NOTE ================= -->
+<div class="crisis">
+  <div class="wrap"><b>In crisis right now?</b> Please contact your GP, call the Samaritans free on <b>116 123</b>, or emergency services. Coachall supports recovery — it isn't a crisis service.</div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="mark">C O A C H A L L</div>
+    <p class="better">Building Empowerment, Transcending Trauma, Emerging Resilient — better days are ahead.</p>
+    <p>©2026 Coachall · Brighton, UK · <a href="mailto:spencer@coachall.co.uk">spencer@coachall.co.uk</a></p>
+    <!-- FIX: privacy policy now exists (UK GDPR / PECR) -->
+    <div class="links">
+      <a href="https://payhip.com/CREATEbyCoachall/terms-and-conditions-of-sale" rel="noopener">Terms &amp; Conditions</a>
+      <a href="https://payhip.com/CREATEbyCoachall/refund-and-cancellation-policy" rel="noopener">Refunds</a>
+      <a href="privacy.html">Privacy Notice</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="organisations.html">For Organisations</a>
     </div>
   </div>
 </footer>
 
-<script>
-  // Fill links from CONFIG
-  document.querySelectorAll('[data-link="payhip"]').forEach(a => a.href = CONFIG.PAYHIP_URL);
-  document.querySelectorAll('[data-manual-index]').forEach(a => {
-    const i = parseInt(a.getAttribute('data-manual-index'), 10);
-    const url = CONFIG.MANUAL_URLS && CONFIG.MANUAL_URLS[i];
-    a.href = url || CONFIG.PAYHIP_URL;
-  });
-  document.querySelectorAll('[data-link="terms"]').forEach(a => a.href = CONFIG.TERMS_URL);
-  document.querySelectorAll('[data-link="refunds"]').forEach(a => a.href = CONFIG.REFUNDS_URL);
-  document.querySelectorAll('[data-link="library"]').forEach(a => a.href = CONFIG.LIBRARY_URL || CONFIG.PAYHIP_URL);
-  document.querySelectorAll('[data-link="library-coaching"]').forEach(a => a.href = CONFIG.LIBRARY_COACHING_URL || CONFIG.PAYHIP_URL);
-  const form = document.querySelector('[data-form="checkin"]');
-  const statusEl = document.getElementById('formStatus');
-  if (CONFIG.FORM_ACTION) {
-    form.action = CONFIG.FORM_ACTION;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      btn.disabled = true;
-      statusEl.textContent = 'One moment…';
-      fetch(CONFIG.FORM_ACTION, { method: 'POST', body: new FormData(form) })
-        .then(r => r.json())
-        .then(() => {
-          form.style.display = 'none';
-          statusEl.textContent = 'Done — check your inbox. Your Honest Check-In is on its way.';
-        })
-        .catch(() => {
-          btn.disabled = false;
-          statusEl.textContent = 'That didn\u2019t go through — please try again, or email spencer@coachall.co.uk.';
-        });
-    });
-  } else {
-    form.addEventListener('submit', e => { e.preventDefault(); alert('Signup form not yet connected — set FORM_ACTION in the CONFIG block.'); });
-  }
+<div class="toast" id="toast" role="status"></div>
 
-  // The acronym breathe: rotates between three manuals' word sets,
-  // all verified against the published PDFs.
-  const FRAMEWORK_SETS = [
-    { name: "Creative Journey", words: ["Choose","Refine","Empower","Achieve","Triumph","Excel"] },
-    { name: "Wellness", words: ["Connect","Rest","Exercise","Awareness","Try New Things","Express Yourself"] },
-    { name: "Better Habits", words: ["Comprehend","Replace","Environment","Awareness","Track","Enlist"] }
-  ];
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let i = 0;
-    const blocks = document.querySelector('.acronym');
-    const label = document.querySelector('.set-label');
-    const nameEl = document.getElementById('setName');
-    const slots = document.querySelectorAll('.acro-word[data-slot]');
-    document.getElementById('seeHow').textContent = ' See how they change?';
-    setInterval(() => {
-      blocks.classList.add('dim');
-      label.classList.add('dim');
-      setTimeout(() => {
-        i = (i + 1) % FRAMEWORK_SETS.length;
-        slots.forEach((s, n) => s.textContent = FRAMEWORK_SETS[i].words[n]);
-        nameEl.textContent = FRAMEWORK_SETS[i].name;
-        blocks.classList.remove('dim');
-        label.classList.remove('dim');
-      }, 620);
-    }, 6000);
-  }
+<script>
+/* ---------- Manual cards (covers are CSS placeholders until real cover art exists) ---------- */
+const MANUALS = [
+  ["01","Creative Journey","Where the framework begins — rediscovering creativity as a way back to yourself.","#1A2B4A","https://payhip.com/b/Abciy"],
+  ["02","Meditation","Stillness as a practice, not a performance. Attention you can rebuild.","#24456B","https://payhip.com/b/slB6P"],
+  ["03","Breathwork","The one tool you carry everywhere, and how to actually use it.","#1E3A5C","https://payhip.com/b/vfmGp"],
+  ["04","Better Habits","Small changes that hold — built for ease, not willpower.","#2B4A73","https://payhip.com/b/OA2iD"],
+  ["05","Wellness","The everyday foundations: rest, food, movement, honest maintenance.","#1A2B4A","https://payhip.com/b/XeROS"],
+  ["06","Slow Life","Doing less, deliberately. A quieter pace as a form of recovery.","#24456B","https://payhip.com/b/UB854"],
+  ["07","Primal Fitness","Natural movement for real bodies — strength without the gym theatre.","#1E3A5C","https://payhip.com/b/jGbE2"],
+  ["08","Sobriety & Recovery","The framework applied where it was forged — living well beyond addiction.","#2B4A73","https://payhip.com/b/uD0sm"],
+  ["09","Neurowellness & Craft","What working with your hands does for your mind, and how to begin.","#1A2B4A","https://payhip.com/b/67Pfb"],
+  ["10","Grief & Loss","Creating through loss — gentle structure for the hardest of times.","#24456B","https://payhip.com/b/RPnoV"]
+];
+document.getElementById('manualGrid').innerHTML = MANUALS.map(m => `
+  <a class="manual" href="${m[4]}">
+    <div class="cover" style="background:linear-gradient(160deg,${m[3]},#131F37);">
+      <span class="num">${m[0]}</span>
+      <span class="ctitle">${m[1]}</span>
+      <span class="brand">C.R.E.A.T.E.</span>
+    </div>
+    <div class="body">
+      <span class="desc">${m[2]}</span>
+      <span class="price">£19</span>
+      <span class="buy">Buy now →</span>
+    </div>
+  </a>`).join('');
+
+/* ---------- Framework rotation (word sets: Creative Journey & Sobriety & Recovery verified against the manuals; Wellness as previously shown) ---------- */
+const SETS = [
+  {words:["Connect","Rest","Exercise","Awareness","Try New Things","Express Yourself"], from:"Wellness"},
+  {words:["Choose","Refine","Empower","Achieve","Triumph","Excel"], from:"Creative Journey"},
+  {words:["Choose","Rebuild","Establish","Acknowledge","Trust","Emerge"], from:"Sobriety & Recovery"}
+];
+const lettersEl = document.getElementById('letters'), fromEl = document.getElementById('fromManual');
+let si = 0;
+function renderSet(animate){
+  lettersEl.innerHTML = "CREATE".split('').map((l,i) =>
+    `<div class="letter"><span class="l">${l}</span><span class="w"${animate ? ` style="animation-delay:${i*70}ms"` : ' style="animation:none"'}>${SETS[si].words[i]}</span></div>`).join('');
+  fromEl.textContent = "From the manual: " + SETS[si].from;
+}
+renderSet(false);
+setInterval(()=>{ si = (si+1)%SETS.length; renderSet(true); }, 4200);
+
+/* ---------- Demo form (shows where the WORKING signup goes) ---------- */
+/* Signup form posts natively to MailerLite — no JS needed. */
+
+/* ---------- Demo checkout toast ---------- */
+const toast = document.getElementById('toast'); let tt;
+function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(()=>toast.classList.remove('show'), 3400); }
 </script>
 </body>
 </html>
