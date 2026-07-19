@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coachall — Ten Recovery Manuals & Coaching by Spencer Hall</title>
-<meta name="description" content="Ten practical self-study manuals for rebuilding life after trauma — plus one-to-one coaching. Written by Spencer Hall, Recovery Coach Professional (CCAR), who spent 25 years as a professional gambler and made his way back.">
+<meta name="description" content="Ten practical self-study manuals for rebuilding life after trauma — plus one-to-one coaching. Written by Spencer Hall, Recovery Coach Professional (CCAR), who spent 25 years as a compulsive gambler and made his way back.">
 <link rel="canonical" href="https://coachall.co.uk/">
 
 <!-- FIX: Open Graph + Twitter cards — shared links now render with image, title and description -->
@@ -234,8 +234,8 @@ blockquote footer{font-size:.85rem;color:#8A97A8;font-style:normal;}
   <div class="wrap">
     <span><b>Recovery Coach Professional</b> — CCAR accredited</span>
     <span><b>IARCP</b> member</span>
-    <span>As featured in <b>Barcelona Metropolitan</b></span>
-    <span><b>25 years</b> a professional gambler</span>
+    <span>As featured in <a href="https://www.barcelona-metropolitan.com/living/business/a-day-in-the-life-spencer-hall/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;"><b>Barcelona Metropolitan</b></a></span>
+    <span><b>25 years</b> a compulsive gambler</span>
   </div>
 </div>
 
@@ -332,7 +332,7 @@ blockquote footer{font-size:.85rem;color:#8A97A8;font-style:normal;}
         <div class="per">all ten manuals + one session</div>
         <p class="what">The whole shelf, plus an hour with me to point it at your actual life. <span class="save">Session alone is £75.</span></p>
         <!-- FIX: direct product link, not the general storefront -->
-        <a class="btn btn-ghost" href="mailto:spencer@coachall.co.uk?subject=Library%20%2B%20Session%20Enquiry">Get Library + Session</a>
+        <a class="btn btn-ghost" href="https://payhip.com/b/vcswj" target="_blank" rel="noopener">Get Library + Session</a>
       </div>
     </div>
   </div>
@@ -368,17 +368,29 @@ blockquote footer{font-size:.85rem;color:#8A97A8;font-style:normal;}
     <span class="eyebrow">Want more than the PDF?</span>
     <h2>Get guided to the right manual.</h2>
     <p>Sign up and I'll send a handful of short letters — starting with a guide to which manual actually fits what you're carrying. Unsubscribe any time.</p>
-    <!-- WIRED (Day 0 complete): posts directly to the site's own MailerLite endpoint
-         (account 2489057, form 192036572284061279), lifted from the live site's config. The MailerLite
-         confirmation opens in a new tab. Can be swapped for the official dashboard embed snippet at any time. -->
-    <form id="signupForm" method="post" action="https://assets.mailerlite.com/jsonp/2489057/forms/192036572284061279/subscribe" target="_blank" rel="noopener">
+    <iframe name="ml_hidden" title="" style="display:none"></iframe>
+    <form id="signupForm" method="post" action="https://assets.mailerlite.com/jsonp/2489057/forms/192036572284061279/subscribe" target="ml_hidden">
       <input type="email" name="fields[email]" placeholder="Your email address" required aria-label="Email address">
       <input type="hidden" name="ml-submit" value="1">
       <input type="hidden" name="anticsrf" value="true">
-      <button class="btn-navy" type="submit">Send me the guides</button>
+      <button class="btn-navy" type="submit">Send me the guide</button>
     </form>
     <p class="form-status" id="formStatus" role="status"></p>
-    <p class="fineprint">Your address is used for the guides and letters only. See the <a href="privacy.html">privacy notice</a>.</p>
+    <script>
+    (function(){
+      var form = document.getElementById('signupForm');
+      var status = document.getElementById('formStatus');
+      form.addEventListener('submit', function(){
+        var btn = form.querySelector('button');
+        btn.disabled = true; btn.textContent = 'Sending\u2026';
+        setTimeout(function(){
+          form.style.display = 'none';
+          status.innerHTML = '<b>You\u2019re in.</b> Check your inbox \u2014 confirm your address if asked, and the Start Here guide will be on its way, with a handful of short letters to follow.';
+        }, 900);
+      });
+    })();
+    </script>
+    <p class="fineprint">Your address is used for the guide and letters only. See the <a href="privacy.html">privacy notice</a>.</p>
   </div>
 </section>
 
