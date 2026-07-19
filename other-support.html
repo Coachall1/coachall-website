@@ -61,7 +61,7 @@ nav a.nav-cta{background:var(--gold);color:var(--navy-deep);padding:.45rem 1rem;
 .site-footer a{color:#C7D2E3;}
 .site-footer .links{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:.9rem;}
 @media (max-width:600px){header .wrap{flex-wrap:wrap;justify-content:center;row-gap:.35rem;}nav{flex-wrap:wrap;justify-content:center;gap:.45rem 1.05rem;}nav a{white-space:nowrap;font-size:.88rem;}}
-@media (max-width:600px){.mob-sep{display:none;}.fmail{display:block;margin-top:.35rem;}}
+@media (max-width:600px){.mob-sep{display:none;}.fmail{display:block;margin-top:.35rem;}.community form{flex-direction:column;}}
 </style>
 </head>
 <body>
@@ -152,8 +152,29 @@ nav a.nav-cta{background:var(--gold);color:var(--navy-deep);padding:.45rem 1rem;
   <div class="wrap">
     <span class="eyebrow">What&rsquo;s coming</span>
     <h2>Something new is being built here.</h2>
-    <p>Coachall is developing free, peer-led gambling-harm recovery sessions in Brighton &amp; Hove — small, honest groups built on the C.R.E.A.T.E. framework and twenty-five years of lived experience. Nothing to book yet, no dates to miss — but join the mailing list and you&rsquo;ll be the first to know when the first session runs.</p>
-    <a class="btn btn-gold" href="index.html#checkin">Join the mailing list</a>
+    <p>Coachall is developing free, peer-led gambling-harm recovery sessions in Brighton &amp; Hove — small, honest groups built on the C.R.E.A.T.E. framework and twenty-five years of lived experience. Nothing to book yet, no dates to miss. Join the list and you&rsquo;ll be the first to know when the first session runs — and the free Start Here guide, the complete introduction to the method, will follow by email.</p>
+    <iframe name="ml_hidden" title="" style="display:none"></iframe>
+    <form id="signupForm" method="post" action="https://assets.mailerlite.com/jsonp/2489057/forms/192036572284061279/subscribe" target="ml_hidden" style="max-width:540px;margin:0 auto;display:flex;gap:.6rem;">
+      <input type="email" name="fields[email]" placeholder="Your email address" required aria-label="Email address" style="flex:1;padding:.95rem 1rem;border-radius:4px;border:1px solid #C7D2E3;font-family:inherit;font-size:1rem;">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button class="btn btn-gold" type="submit">Keep me posted</button>
+    </form>
+    <p id="formStatus" style="max-width:52ch;margin:1rem auto 0;color:#F5E6C8;"></p>
+    <script>
+    (function(){
+      var form = document.getElementById('signupForm');
+      var status = document.getElementById('formStatus');
+      form.addEventListener('submit', function(){
+        var btn = form.querySelector('button');
+        btn.disabled = true; btn.textContent = 'Sending\u2026';
+        setTimeout(function(){
+          form.style.display = 'none';
+          status.innerHTML = '<b>You\u2019re in.</b> Check your inbox \u2014 confirm your address if asked, and the Start Here guide will follow, with session news to come.';
+        }, 900);
+      });
+    })();
+    </script>
   </div>
 </section>
 
