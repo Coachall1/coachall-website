@@ -185,9 +185,7 @@ blockquote footer{font-size:.85rem;color:#9FB0C9;font-style:normal;}
         <div class="amount">£75</div>
         <div class="per">60 minutes</div>
         <p class="what">One session, no commitment beyond it. A good way to try coaching properly for the first time.</p>
-        <!-- FIX: an actual way to pay — Payhip/Stripe payment link -->
-        <a class="btn-navy demo-pay" href="#" data-note="FIX: Payhip/Stripe payment link for the £75 session — on the live site none of these buttons take payment">Buy session — £75</a>
-        <a class="btn-outline" href="https://calendly.com/spencer-sz4/introductory-call" rel="noopener" target="_blank">or book via free call</a>
+        <a class="btn-navy" href="https://calendly.com/spencer-sz4/introductory-call" rel="noopener" target="_blank">Book session — £75</a>
       </div>
       <div class="tier best">
         <span class="badge">Most chosen</span>
@@ -195,16 +193,14 @@ blockquote footer{font-size:.85rem;color:#9FB0C9;font-style:normal;}
         <div class="amount">£399</div>
         <div class="per">£66.50 per session — save £51</div>
         <p class="what">The committed start — enough sessions to build real momentum through the framework.</p>
-        <a class="btn-navy demo-pay" href="#" data-note="FIX: payment link for the £399 six-session block">Buy six — £399</a>
-        <a class="btn-outline" href="https://calendly.com/spencer-sz4/introductory-call" rel="noopener" target="_blank">or book via free call</a>
+        <a class="btn-navy" href="https://calendly.com/spencer-sz4/introductory-call" rel="noopener" target="_blank">Book six — £399</a>
       </div>
       <div class="tier">
         <h3>Ten sessions</h3>
         <div class="amount">£595</div>
         <div class="per">£59.50 per session — save £155</div>
         <p class="what">The full journey — the deepest saving, for anyone ready to work through the whole framework with support.</p>
-        <a class="btn-navy demo-pay" href="#" data-note="FIX: payment link for the £595 ten-session block">Buy ten — £595</a>
-        <a class="btn-outline" href="https://calendly.com/spencer-sz4/introductory-call" rel="noopener" target="_blank">or book via free call</a>
+        <a class="btn-navy" href="https://calendly.com/spencer-sz4/introductory-call" rel="noopener" target="_blank">Book ten — £595</a>
       </div>
     </div>
   </div>
@@ -252,13 +248,6 @@ blockquote footer{font-size:.85rem;color:#9FB0C9;font-style:normal;}
   </div>
 </footer>
 
-<div class="toast" id="toast" role="status"></div>
-<script>
-const toast = document.getElementById('toast'); let tt;
-function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(()=>toast.classList.remove('show'), 3400); }
-document.querySelectorAll('.demo-pay').forEach(a => a.addEventListener('click', e => {
-  e.preventDefault(); showToast("Demo: " + a.dataset.note);
-}));
-</script>
+
 </body>
 </html>
