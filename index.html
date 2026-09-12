@@ -93,7 +93,7 @@ nav a.nav-cta:hover{background:#d9a855;color:var(--navy-deep);}
 /* FIX: photo of the fellow traveller — placeholder frame shows where Spencer's portrait goes */
 .photo-frame{background:linear-gradient(160deg,var(--mist),#fff);border:1px solid #D8DFE8;border-radius:6px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:#8A97A8;font-style:italic;box-shadow:0 10px 30px rgba(26,43,74,.08);}
 .photo-frame svg{margin-bottom:1rem;opacity:.55;}
-.photo-frame small{font-style:normal;font-size:.8rem;margin-top:.6rem;color:#A7B2C0;}
+.photo-frame small{font-style:normal;font-size:.8rem;margin-top:.6rem;color:#A7B2C0;}.photo-frame.has-photo{padding:0;overflow:hidden;}.photo-frame.has-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 .story p{margin-bottom:1.2rem;max-width:62ch;}
 .story .sig{color:var(--gold);font-style:italic;font-size:1.1rem;}
 .cred-card{background:var(--navy);color:var(--mist);padding:1.4rem 1.6rem;border-radius:6px;margin-top:1.8rem;font-size:.95rem;max-width:62ch;}
@@ -244,10 +244,8 @@ blockquote footer{font-size:.85rem;color:#8A97A8;font-style:normal;}
 <section class="story" id="story">
   <div class="wrap">
     <div class="story-grid">
-      <div class="photo-frame" aria-label="Photo of Spencer Hall">
-        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#8A97A8" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
-        Photo of Spencer here<br>— the fellow traveller, in his workshop
-        <small>A real portrait converts far better than any stock image</small>
+      <div class="photo-frame has-photo" aria-label="Photo of Spencer Hall">
+        <img src="assets/images/spencer-workshop.jpg" alt="Spencer Hall in his yakisugi workshop" loading="lazy">
       </div>
       <div>
         <span class="eyebrow">Spencer's story</span>
@@ -383,10 +381,10 @@ blockquote footer{font-size:.85rem;color:#8A97A8;font-style:normal;}
       var status = document.getElementById('formStatus');
       form.addEventListener('submit', function(){
         var btn = form.querySelector('button');
-        btn.disabled = true; btn.textContent = 'Sending\u2026';
+        btn.disabled = true; btn.textContent = 'Sending…';
         setTimeout(function(){
           form.style.display = 'none';
-          status.innerHTML = '<b>You\u2019re in.</b> Check your inbox \u2014 confirm your address if asked, and the Start Here guide will be on its way, with a handful of short letters to follow.';
+          status.innerHTML = '<b>You’re in.</b> Check your inbox — confirm your address if asked, and the Start Here guide will be on its way, with a handful of short letters to follow.';
         }, 900);
       });
     })();
